@@ -1,5 +1,11 @@
 # Update log
 
+## v0.4 — October 4, 2026
+
+- Improved link previews for cleaner sharing in iMessage, Discord, and other supported apps.
+- Added a favicon for improved visual distinction.
+- Updated content for enhanced clarity.
+
 ## v0.3 — September 27, 2026
 
 - Integrated OpenStreetMap and Leaflet for station maps.
