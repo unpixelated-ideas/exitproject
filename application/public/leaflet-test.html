@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>135 St — Leaflet test</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; color: #172332; background: #f5f7fa; font-family: system-ui, sans-serif; }
+      main { width: min(100%, 1100px); margin: auto; padding: 16px; }
+      h1 { margin: 0 0 8px; font-size: 1.5rem; }
+      p { margin: 8px 0; }
+      .legend { display: flex; gap: 24px; margin: 16px 0; }
+      .legend span { display: inline-flex; align-items: center; gap: 8px; }
+      .symbol { display: block; width: 18px; height: 18px; border: 2px solid white; box-shadow: 0 0 0 1px #172332; }
+      .stair { background: #175bbb; border-radius: 50%; }
+      .elevator { background: #a83a08; border-radius: 2px; }
+      .entrance-marker { background: transparent; border: 0; }
+      .entrance-marker:focus-visible { outline: 3px solid #172332; outline-offset: 4px; }
+      #map { width: 100%; height: 70vh; height: 70dvh; min-height: 320px; border: 1px solid #aab4c0; border-radius: 8px; }
+      .leaflet-popup-content { line-height: 1.6; }
+      #status { color: #973000; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>135 St · 2 3</h1>
+      <p>Entrance / exit map test. Select a marker to view its coordinates.</p>
+      <div class="legend" aria-label="Marker legend">
+        <span><i class="symbol stair" aria-hidden="true"></i>Stair</span>
+        <span><i class="symbol elevator" aria-hidden="true"></i>Elevator</span>
+      </div>
+      <div id="map" aria-label="Map of six entrances and exits at 135 St on the 2 and 3 lines"></div>
+      <p id="status" role="status"></p>
+      <noscript>Enable JavaScript to view this interactive map.</noscript>
+    </main>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+      if (!window.L) {
+        document.getElementById('status').textContent = 'The map library could not load. Check your connection and reload.';
+      } else {
+        const entrances = [
+          { type: 'Stair', lat: 40.8140321, lng: -73.9411204 },
+          { type: 'Stair', lat: 40.814316, lng: -73.94091 },
+          { type: 'Stair', lat: 40.8139129, lng: -73.9408289 },
+          { type: 'Stair', lat: 40.8142863, lng: -73.94056 },
+          { type: 'Elevator', lat: 40.8139935, lng: -73.9411593 },
+          { type: 'Elevator', lat: 40.8141678, lng: -73.9406402 },
+        ];
+        // At zoom 19 even the closest pair has separate, non-overlapping targets.
+        const map = L.map('map', { minZoom: 19, maxZoom: 21 });
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxNativeZoom: 19,
+          maxZoom: 21,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).on('tileerror', () => {
+          document.getElementById('status').textContent = 'Some map tiles could not load. Entrance markers remain available; check your connection and reload.';
+        }).addTo(map);
+
+        for (const entrance of entrances) {
+          L.marker([entrance.lat, entrance.lng], {
+            icon: L.divIcon({
+              className: 'entrance-marker',
+              html: `<span class="symbol ${entrance.type.toLowerCase()}" aria-hidden="true"></span>`,
+              iconSize: [18, 18],
+              iconAnchor: [9, 9],
+              popupAnchor: [0, -12],
+            }),
+            title: `135 St — ${entrance.type} (${entrance.lat}, ${entrance.lng})`,
+            alt: `135 St, 2 3, ${entrance.type}, latitude ${entrance.lat}, longitude ${entrance.lng}`,
+            riseOnHover: true,
+          }).addTo(map).bindPopup(
+            `<strong>135 St</strong><br>2 3<br>${entrance.type}<br>Latitude: ${entrance.lat}<br>Longitude: ${entrance.lng}`
+          );
+        }
+
+        const bounds = L.latLngBounds(entrances.map(({ lat, lng }) => [lat, lng]));
+        map.fitBounds(bounds, { padding: [30, 30], maxZoom: 20 });
+        new ResizeObserver(() => map.invalidateSize()).observe(document.getElementById('map'));
+      }
+    </script>
+  </body>
+</html>
