@@ -112,5 +112,50 @@
   "sirTheme": "스태튼아일랜드 철도",
   "shuttleTheme": "S · 셔틀",
   "mapUnavailable": "이 지난 예시에는 출입구 좌표가 없습니다.",
-  "mapTileError": "일부 지도 타일을 불러오지 못했습니다. 목록에서 모든 출구에 번호를 지정할 수 있습니다."
+  "mapTileError": "일부 지도 타일을 불러오지 못했습니다. 목록에서 모든 출구에 번호를 지정할 수 있습니다.",
+  "directory": {
+    "countDefinition": "출입구 수에는 엘리베이터를 제외한 모든 접근 지점이 포함됩니다. 입장 전용 출입구도 포함하며, 출입구 엘리베이터는 별도로 셉니다.",
+    "searchLabel": "역 찾기",
+    "searchPlaceholder": "역 이름, 노선 또는 역 ID",
+    "results": "전체 {{total}}개 중 {{count}}개",
+    "sorted": "{{column}} 기준 {{direction}}",
+    "ascending": "오름차순",
+    "descending": "내림차순",
+    "sortAction": "{{column}} {{direction}} 정렬",
+    "columns": {
+      "name": "역 / 환승역 그룹",
+      "exits": "출입구",
+      "elevators": "엘리베이터",
+      "regularServices": "정규 운행 노선",
+      "nightServices": "심야 추가 노선",
+      "members": "구성 역",
+      "ids": "역 / 환승역 ID",
+      "votingDate": "투표 예정일"
+    },
+    "boroughs": {
+      "M": "맨해튼",
+      "Bk": "브루클린",
+      "Q": "퀸스",
+      "Bx": "브롱크스",
+      "SI": "스태튼아일랜드"
+    },
+    "unknown": "자료 없음",
+    "planned": "계획 노선",
+    "noNightAdditions": "심야 추가 노선 없음",
+    "standalone": "단일 역",
+    "complexId": "환승역 ID:",
+    "stationIds": "역 ID:",
+    "noResults": "검색된 역이 없습니다",
+    "trySearch": "다른 역 이름, 노선 또는 ID로 검색해 주세요.",
+    "clearSearch": "검색 지우기",
+    "tableLabel": "뉴욕 지하철 및 스태튼아일랜드 철도 역 목록",
+    "tableHelp": "열 제목을 선택하면 정렬됩니다. 가로로 스크롤하면 모든 열을 볼 수 있습니다.",
+    "methodTitle": "집계 및 운행 정보 안내",
+    "serviceDefinition": "정규 노선에는 평일, 주말, 저녁 및 일부 시간대의 정기 운행이 포함됩니다. 심야 열에는 정규 노선 열에 없는 노선만 표시합니다. 빈칸은 심야 운행이 없다는 뜻이 아닙니다. 임시 운행 변경은 제외하며, 같은 노선의 일반 및 급행은 하나로 표시합니다.",
+    "plannedDefinition": "T(계획 노선)는 제공된 노선 자료에 따라 향후 T 정차역 또는 연결역이 될 기존 역에 표시됩니다. 계획된 125번가 연장 구간도 포함되며, 현재 운행 노선이 아닙니다. 아직 개통하지 않은 역은 표시하지 않습니다.",
+    "sourceDefinition": "출입구 수는 제공된 MTA 2024 출입구 자료를 기준으로 하며, 확인된 식별자 오류를 수정했습니다. 역 구성과 노선은 MTA 역 자료 및 2026년 10월 5~11일 정규 시간표와 대조했습니다. 공동 출입구는 환승역 그룹당 한 번만 셉니다. 자료 없음은 출입구 기록이 없음을 의미합니다. 아직 역 행을 클릭할 수 없습니다.",
+    "loading": "역 목록을 불러오는 중…",
+    "stationId": "역 ID:",
+    "complexIds": "환승역 ID:"
+  }
 }

@@ -1,5 +1,10 @@
 # Update log
 
+## v0.5 — October 8, 2026
+
+- Improved voting module UX.
+- Populated the archive page.
+
 ## v0.4 — October 4, 2026
 
 - Improved link previews for cleaner sharing in iMessage, Discord, and other supported apps.

@@ -39,11 +39,11 @@ The dependency lockfile is included. npm can also run the scripts after installi
 
 ## Prototype status
 
-The interface uses neutral voting copy without prototype/test banners. The active stations use supplied real entrance coordinates; the schedule, archive and submission service remain mock implementations. Browser storage uses the `mta-exit:v2` namespace so the original QA ballot and appearance choices do not seed the experience: the first visit starts in System appearance with every exit unassigned. Subsequent explicit preferences and personal drafts persist normally.
+The interface uses neutral voting copy without prototype/test banners. The active stations use supplied real entrance coordinates; the schedule and submission service remain mock implementations. The Archive is a complete, static station directory with separate entrance/elevator counts and scheduled-service data. Browser storage uses the `mta-exit:v2` namespace so the original QA ballot and appearance choices do not seed the experience: the first visit starts in System appearance with every exit unassigned. Subsequent explicit preferences and personal drafts persist normally.
 
 This is a functional frontend demonstration, not a public voting system. Try the introduction, number every exit at 135 St (2/3), 207 St - Inwood (A), and Tottenville (SIR), revisit stations, review, and simulate submission. These stations have six, six, and four entrances respectively. A separate one-exit fixture in tests/fixtures supports the future April Fools special without appearing on the ordinary ballot. Archive and supporting information pages are included. Only English and Korean are enabled; eleven future languages remain visibly disabled.
 
-Active entrance types and coordinates are supplied station data. Dates, archive counts and winning arrangements remain mock fixtures. Dates intentionally sit outside 2027. The active demo is explicitly selected regardless of the clock. Entrance IDs use station ID and coordinates, not array position. Temporary letter labels distinguish entrances without implying voted numbers. The new demo-ballot-v2 draft key isolates old placeholder votes. The real 2027 schedule, group sizes and cadence remain undecided. This is not a full-system dataset or a proposed actual voting schedule.
+Active entrance types and coordinates are supplied station data. Dates and winning arrangements remain mock fixtures. The Archive directory uses the saved source inventory and entrance records documented below. Dates intentionally sit outside 2027. The active demo is explicitly selected regardless of the clock. Entrance IDs use station ID and coordinates, not array position. Temporary letter labels distinguish entrances without implying voted numbers. The new demo-ballot-v2 draft key isolates old placeholder votes. The real 2027 schedule, group sizes and cadence remain undecided. This is not a full-system dataset or a proposed actual voting schedule.
 
 ## Structure and replacement boundaries
 
@@ -68,3 +68,11 @@ The UI is mobile-first, with 44px minimum control heights, keyboard-operable nat
 Validate authoritative station/exit data and map tile usage for public deployment; finalize the actual schedule and methodology, including aggregation and tie handling; implement server-side ballot validation, durable storage, appropriate abuse protections and submission recovery/idempotency; establish privacy/terms and feedback handling; review translations with native speakers; conduct assistive-technology and real-device testing; and choose public hosting, security operations and a domain. The archive type anticipates distributions and alternative arrangements but no real aggregation is implemented.
 
 The repository publishes the frontend demonstration to https://unpixelated-ideas.github.io/exitproject/ through GitHub Actions and GitHub Pages on each push to `main`. The workflow runs lint, tests and a production build before deployment. Real ballot collection still requires a backend. This is a conventional portable React + TypeScript + Vite application; future publication can serve its build output while adapters connect to the chosen backend.
+
+## Archive directory
+
+The Archive includes 493 operating stations in 444 station/complex rows, with search and seven sortable columns. Non-elevator access points and entrance elevators are separate; regular services include weekends and limited scheduled trips, with additional overnight routes shown separately. Planned T connections are labeled explicitly. Rows are not yet linked to voting results.
+
+The directory snapshot, source provenance, guarded identifier corrections, and offline rebuild instructions are documented in [reference-files/archive/README.md](reference-files/archive/README.md). Generated data lives in `src/data/archive-directory.json`, separate from the active ballot fixtures. English/Korean interface text and existing themes are supported. The full directory loads only when the Archive is opened.
+
+Resumable implementation checkpoints are saved in `../ARCHIVE_IMPLEMENTATION.md`.

@@ -112,5 +112,50 @@
   "sirTheme": "Staten Island Railway",
   "shuttleTheme": "S · Shuttle",
   "mapUnavailable": "No entrance coordinates are available for this archived example.",
-  "mapTileError": "Some map tiles could not load. You can still number every exit using the list."
+  "mapTileError": "Some map tiles could not load. You can still number every exit using the list.",
+  "directory": {
+    "countDefinition": "Exits count all listed non-elevator access points, including entry-only entrances. Elevators are counted separately and include entrance elevators only.",
+    "searchLabel": "Find a station",
+    "searchPlaceholder": "Station, train, or station ID",
+    "results": "{{count}} of {{total}} rows",
+    "sorted": "Sorted by {{column}}, {{direction}}",
+    "ascending": "ascending",
+    "descending": "descending",
+    "sortAction": "Sort {{column}}, {{direction}}",
+    "columns": {
+      "name": "Station / complex",
+      "exits": "Exits",
+      "elevators": "Elevators",
+      "regularServices": "Regular services",
+      "nightServices": "Additional night services",
+      "members": "Constituent stations",
+      "ids": "Station / complex IDs",
+      "votingDate": "Voting date"
+    },
+    "boroughs": {
+      "M": "Manhattan",
+      "Bk": "Brooklyn",
+      "Q": "Queens",
+      "Bx": "The Bronx",
+      "SI": "Staten Island"
+    },
+    "unknown": "Unknown",
+    "planned": "Planned",
+    "noNightAdditions": "No additional night routes",
+    "standalone": "Standalone station",
+    "complexId": "Complex:",
+    "stationIds": "Stations:",
+    "noResults": "No stations found",
+    "trySearch": "Try another name, train, or ID.",
+    "clearSearch": "Clear search",
+    "tableLabel": "Subway and Staten Island Railway station directory",
+    "tableHelp": "Select any column heading to sort. Scroll across to see all columns.",
+    "methodTitle": "About the counts and services",
+    "serviceDefinition": "Regular services include weekday, weekend, evening, and limited scheduled trips. Night services show only routes absent from the regular column; a blank cell does not mean no overnight service. Temporary service changes are excluded. Local and express variants share one route bullet.",
+    "plannedDefinition": "T (Planned) marks existing stations or complexes with a proposed T stop or connection in the supplied route reference, including the proposed 125th Street extension. It is not current service. Future-only stations are not listed.",
+    "sourceDefinition": "Entrance counts use the supplied MTA 2024 entrance dataset export, with documented identifier corrections. Station membership and services were reconciled with MTA station data and the regular schedule for October 5–11, 2026. Shared entrances are counted once per complex. Unknown means no entrance records are available. Station rows are not clickable yet.",
+    "loading": "Loading station directory…",
+    "stationId": "Station:",
+    "complexIds": "Complexes:"
+  }
 }
