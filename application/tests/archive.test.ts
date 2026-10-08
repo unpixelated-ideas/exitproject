@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import directory from '../src/data/archive-directory.json';
-import inventory from '../reference-files/archive/mta-stations.json';
-import reconciliation from '../reference-files/archive/reconciliation.json';
+import inventory from './fixtures/archive/mta-stations.json';
+import reconciliation from './fixtures/archive/reconciliation.json';
 import { archiveColumns, groupArchiveServices, matchesArchiveSearch, sortArchiveRows, type ArchiveRow } from '../src/domain/archive.ts';
 
 const rows: ArchiveRow[] = directory.rows;
