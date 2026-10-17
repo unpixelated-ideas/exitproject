@@ -11,6 +11,10 @@
   "skip": "Skip to content",
   "period": "VOTING PERIOD",
   "stationCount": "{{count}} stations",
+  "stationCount_one": "{{count}} station",
+  "stationCount_other": "{{count}} stations",
+  "periodSelect": "Voting period",
+  "specialPeriod": "Special",
   "dateLabel": "Dates",
   "reset": "Reset",
   "how": "How it works",
@@ -157,5 +161,30 @@
     "loading": "Loading station directory…",
     "stationId": "Station:",
     "complexIds": "Complexes:"
+  },
+  "updateNotes": {
+    "v0_6": [
+      "Refined the archive page for a cleaner experience.",
+      "Completed the initial draft of the voting schedule.",
+      "Fixed an issue preventing the favicon from displaying correctly."
+    ],
+    "v0_5": [
+      "Improved the voting interface to make it more intuitive.",
+      "Added content to the archive page."
+    ],
+    "v0_4": [
+      "Improved link previews for sharing via iMessage, Discord, and other supported apps.",
+      "Added a favicon to make the site more recognizable.",
+      "Updated various descriptions for better clarity."
+    ],
+    "v0_3": [
+      "Added interactive station maps powered by OpenStreetMap and Leaflet."
+    ],
+    "v0_2": [
+      "Introduced color themes to improve the site's appearance."
+    ],
+    "v0_1": [
+      "Launched the initial version of The Exit Project."
+    ]
   }
 }

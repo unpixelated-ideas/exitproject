@@ -3,7 +3,7 @@ export type LocalizedText = {
     ko: string;
 };
 export interface Exit {
-    type?: "Stair" | "Elevator" | "Ramp";
+    type?: "Stair" | "Elevator" | "Ramp" | "Station House" | "Stair/Escalator" | "Escalator" | "Easement - Street" | "Easement - Passage" | "Underpass" | "Walkway" | "Overpass" | "Stair/Ramp" | "Stair/Ramp/Walkway";
     id: string;
     description: LocalizedText;
     coordinates?: {

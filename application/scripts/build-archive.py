@@ -93,6 +93,9 @@ for station_id, platforms in by_id.items():
     }
     members_by_group[group(station['complex_id'])].append(member)
 
+schedule = json.loads((ROOT / 'src/data/voting-schedule.json').read_text())
+voting_dates = {key.removeprefix('complex-'): value for key, value in {**schedule['generatedAssignments'], **schedule['manualAssignments']}.items()}
+
 rows = []
 for group_id, members in members_by_group.items():
     members.sort(key=lambda member: int(member['stationId']))
@@ -119,7 +122,7 @@ for group_id, members in members_by_group.items():
         'exits': sum(row['Entrance Type'] != 'Elevator' for row in source_entrances) if source_entrances else None,
         'elevators': sum(row['Entrance Type'] == 'Elevator' for row in source_entrances) if source_entrances else None,
         'regularServices': routes(regular),
-        'votingDate': '2027-01-01' if group_id in {'143', '438', '522'} else '2027-04-01' if source_entrances and sum(row['Entrance Type'] != 'Elevator' for row in source_entrances) == 1 else None,
+        'votingDate': voting_dates[group_id] if group_id in voting_dates else '2027-01-01' if group_id in {'143', '438', '522'} else '2027-04-01' if source_entrances and sum(row['Entrance Type'] != 'Elevator' for row in source_entrances) == 1 else None,
         'nightServices': routes(night - regular),
         'plannedServices': ['T'] if any(member['stationId'] in overrides['plannedTStationIds'] for member in members) else [],
         'members': members,

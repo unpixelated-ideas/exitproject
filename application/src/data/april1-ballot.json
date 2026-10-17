@@ -1,0 +1,796 @@
+[
+  {
+    "id": "45",
+    "stationId": "45",
+    "gtfsStopId": "D29",
+    "name": {
+      "en": "Beverley Rd",
+      "ko": "Beverley Rd"
+    },
+    "services": [
+      "Q"
+    ],
+    "exits": [
+      {
+        "id": "45-40.644272--73.964528",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.644272,
+          "longitude": -73.964528
+        }
+      }
+    ]
+  },
+  {
+    "id": "46",
+    "stationId": "46",
+    "gtfsStopId": "D30",
+    "name": {
+      "en": "Cortelyou Rd",
+      "ko": "Cortelyou Rd"
+    },
+    "services": [
+      "Q"
+    ],
+    "exits": [
+      {
+        "id": "46-40.641314--73.963996",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.641314,
+          "longitude": -73.963996
+        }
+      }
+    ]
+  },
+  {
+    "id": "59",
+    "stationId": "59",
+    "gtfsStopId": "B12",
+    "name": {
+      "en": "9 Av",
+      "ko": "9 Av"
+    },
+    "services": [
+      "D",
+      "R",
+      "W"
+    ],
+    "exits": [
+      {
+        "id": "59-40.646402--73.994475",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.6464022,
+          "longitude": -73.9944751
+        }
+      }
+    ]
+  },
+  {
+    "id": "75",
+    "stationId": "75",
+    "gtfsStopId": "N06",
+    "name": {
+      "en": "20 Av",
+      "ko": "20 Av"
+    },
+    "services": [
+      "N",
+      "W"
+    ],
+    "exits": [
+      {
+        "id": "75-40.617341--73.984840",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.617341,
+          "longitude": -73.98484
+        }
+      }
+    ]
+  },
+  {
+    "id": "79",
+    "stationId": "79",
+    "gtfsStopId": "N10",
+    "name": {
+      "en": "86 St",
+      "ko": "86 St"
+    },
+    "services": [
+      "N",
+      "W"
+    ],
+    "exits": [
+      {
+        "id": "79-40.592752--73.978238",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.5927522,
+          "longitude": -73.9782375
+        }
+      }
+    ]
+  },
+  {
+    "id": "108",
+    "stationId": "108",
+    "gtfsStopId": "M01",
+    "name": {
+      "en": "Middle Village-Metropolitan Av",
+      "ko": "Middle Village-Metropolitan Av"
+    },
+    "services": [
+      "M"
+    ],
+    "exits": [
+      {
+        "id": "108-40.712214--73.889229",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.7122137,
+          "longitude": -73.8892288
+        }
+      }
+    ]
+  },
+  {
+    "id": "130",
+    "stationId": "130",
+    "gtfsStopId": "L20",
+    "name": {
+      "en": "Wilson Av",
+      "ko": "Wilson Av"
+    },
+    "services": [
+      "L"
+    ],
+    "exits": [
+      {
+        "id": "130-40.688805--73.904741",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.688805,
+          "longitude": -73.904741
+        }
+      }
+    ]
+  },
+  {
+    "id": "131",
+    "stationId": "131",
+    "gtfsStopId": "L21",
+    "name": {
+      "en": "Bushwick Av-Aberdeen St",
+      "ko": "Bushwick Av-Aberdeen St"
+    },
+    "services": [
+      "L"
+    ],
+    "exits": [
+      {
+        "id": "131-40.682323--73.905155",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.6823234,
+          "longitude": -73.9051549
+        }
+      }
+    ]
+  },
+  {
+    "id": "134",
+    "stationId": "134",
+    "gtfsStopId": "L25",
+    "name": {
+      "en": "Sutter Av",
+      "ko": "Sutter Av"
+    },
+    "services": [
+      "L"
+    ],
+    "exits": [
+      {
+        "id": "134-40.668527--73.901765",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.668527,
+          "longitude": -73.901765
+        }
+      }
+    ]
+  },
+  {
+    "id": "136",
+    "stationId": "136",
+    "gtfsStopId": "L27",
+    "name": {
+      "en": "New Lots Av",
+      "ko": "New Lots Av"
+    },
+    "services": [
+      "L"
+    ],
+    "exits": [
+      {
+        "id": "136-40.659003--73.899315",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.6590028,
+          "longitude": -73.8993145
+        }
+      }
+    ]
+  },
+  {
+    "id": "156",
+    "stationId": "156",
+    "gtfsStopId": "A18",
+    "name": {
+      "en": "103 St",
+      "ko": "103 St"
+    },
+    "services": [
+      "B",
+      "C"
+    ],
+    "exits": [
+      {
+        "id": "156-40.796298--73.961671",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.7962977,
+          "longitude": -73.9616715
+        }
+      }
+    ]
+  },
+  {
+    "id": "189",
+    "stationId": "189",
+    "gtfsStopId": "A57",
+    "name": {
+      "en": "Grant Av",
+      "ko": "Grant Av"
+    },
+    "services": [
+      "A"
+    ],
+    "exits": [
+      {
+        "id": "189-40.676813--73.865464",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.6768128,
+          "longitude": -73.8654636
+        }
+      }
+    ]
+  },
+  {
+    "id": "199",
+    "stationId": "199",
+    "gtfsStopId": "H04",
+    "name": {
+      "en": "Broad Channel",
+      "ko": "Broad Channel"
+    },
+    "services": [
+      "A",
+      "S"
+    ],
+    "exits": [
+      {
+        "id": "199-40.608063--73.815982",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.6080632,
+          "longitude": -73.815982
+        }
+      }
+    ]
+  },
+  {
+    "id": "203",
+    "stationId": "203",
+    "gtfsStopId": "H15",
+    "name": {
+      "en": "Rockaway Park-Beach 116 St",
+      "ko": "Rockaway Park-Beach 116 St"
+    },
+    "services": [
+      "A",
+      "S"
+    ],
+    "exits": [
+      {
+        "id": "203-40.580547--73.837414",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.5805473,
+          "longitude": -73.8374145
+        }
+      }
+    ]
+  },
+  {
+    "id": "209",
+    "stationId": "209",
+    "gtfsStopId": "H11",
+    "name": {
+      "en": "Far Rockaway-Mott Av",
+      "ko": "Far Rockaway-Mott Av"
+    },
+    "services": [
+      "A"
+    ],
+    "exits": [
+      {
+        "id": "209-40.604657--73.754178",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.604657,
+          "longitude": -73.754178
+        }
+      }
+    ]
+  },
+  {
+    "id": "220",
+    "stationId": "220",
+    "gtfsStopId": "D12",
+    "name": {
+      "en": "155 St",
+      "ko": "155 St"
+    },
+    "services": [
+      "B",
+      "D"
+    ],
+    "exits": [
+      {
+        "id": "220-40.830313--73.936687",
+        "type": "Easement - Street",
+        "description": {
+          "en": "Easement - Street · A",
+          "ko": "도로 연결 통로 · A"
+        },
+        "coordinates": {
+          "latitude": 40.830313,
+          "longitude": -73.936687
+        }
+      }
+    ]
+  },
+  {
+    "id": "222",
+    "stationId": "222",
+    "gtfsStopId": "B06",
+    "name": {
+      "en": "Roosevelt Island",
+      "ko": "Roosevelt Island"
+    },
+    "services": [
+      "F",
+      "M"
+    ],
+    "exits": [
+      {
+        "id": "222-40.759019--73.953458",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.7590185,
+          "longitude": -73.9534576
+        }
+      }
+    ]
+  },
+  {
+    "id": "235",
+    "stationId": "235",
+    "gtfsStopId": "F18",
+    "name": {
+      "en": "York St",
+      "ko": "York St"
+    },
+    "services": [
+      "F"
+    ],
+    "exits": [
+      {
+        "id": "235-40.701380--73.986655",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.70138,
+          "longitude": -73.986655
+        }
+      }
+    ]
+  },
+  {
+    "id": "238",
+    "stationId": "238",
+    "gtfsStopId": "F22",
+    "name": {
+      "en": "Smith-9 Sts",
+      "ko": "Smith-9 Sts"
+    },
+    "services": [
+      "F",
+      "G"
+    ],
+    "exits": [
+      {
+        "id": "238-40.674615--73.997288",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.6746146,
+          "longitude": -73.9972884
+        }
+      }
+    ]
+  },
+  {
+    "id": "299",
+    "stationId": "299",
+    "gtfsStopId": "109",
+    "name": {
+      "en": "Dyckman St",
+      "ko": "Dyckman St"
+    },
+    "services": [
+      "1"
+    ],
+    "exits": [
+      {
+        "id": "299-40.861139--73.925132",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.8611391,
+          "longitude": -73.9251315
+        }
+      }
+    ]
+  },
+  {
+    "id": "363",
+    "stationId": "363",
+    "gtfsStopId": "604",
+    "name": {
+      "en": "Westchester Sq-E Tremont Av",
+      "ko": "Westchester Sq-E Tremont Av"
+    },
+    "services": [
+      "6"
+    ],
+    "exits": [
+      {
+        "id": "363-40.840128--73.842875",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.840128,
+          "longitude": -73.842875
+        }
+      }
+    ]
+  },
+  {
+    "id": "380",
+    "stationId": "380",
+    "gtfsStopId": "405",
+    "name": {
+      "en": "Bedford Park Blvd-Lehman College",
+      "ko": "Bedford Park Blvd-Lehman College"
+    },
+    "services": [
+      "4"
+    ],
+    "exits": [
+      {
+        "id": "380-40.873571--73.889878",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.8735714,
+          "longitude": -73.8898784
+        }
+      }
+    ]
+  },
+  {
+    "id": "436",
+    "stationId": "436",
+    "gtfsStopId": "301",
+    "name": {
+      "en": "Harlem-148 St",
+      "ko": "Harlem-148 St"
+    },
+    "services": [
+      "3"
+    ],
+    "exits": [
+      {
+        "id": "436-40.824084--73.936986",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.8240843,
+          "longitude": -73.936986
+        }
+      }
+    ]
+  },
+  {
+    "id": "442",
+    "stationId": "442",
+    "gtfsStopId": "501",
+    "name": {
+      "en": "Eastchester-Dyre Av",
+      "ko": "Eastchester-Dyre Av"
+    },
+    "services": [
+      "5"
+    ],
+    "exits": [
+      {
+        "id": "442-40.887980--73.831195",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.88798,
+          "longitude": -73.831195
+        }
+      }
+    ]
+  },
+  {
+    "id": "444",
+    "stationId": "444",
+    "gtfsStopId": "503",
+    "name": {
+      "en": "Gun Hill Rd",
+      "ko": "Gun Hill Rd"
+    },
+    "services": [
+      "5"
+    ],
+    "exits": [
+      {
+        "id": "444-40.870117--73.845869",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.870117,
+          "longitude": -73.845869
+        }
+      }
+    ]
+  },
+  {
+    "id": "445",
+    "stationId": "445",
+    "gtfsStopId": "504",
+    "name": {
+      "en": "Pelham Pkwy",
+      "ko": "Pelham Pkwy"
+    },
+    "services": [
+      "5"
+    ],
+    "exits": [
+      {
+        "id": "445-40.858817--73.855524",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.8588167,
+          "longitude": -73.8555237
+        }
+      }
+    ]
+  },
+  {
+    "id": "446",
+    "stationId": "446",
+    "gtfsStopId": "505",
+    "name": {
+      "en": "Morris Park",
+      "ko": "Morris Park"
+    },
+    "services": [
+      "5"
+    ],
+    "exits": [
+      {
+        "id": "446-40.854544--73.860248",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.854544,
+          "longitude": -73.860248
+        }
+      }
+    ]
+  },
+  {
+    "id": "502",
+    "stationId": "502",
+    "gtfsStopId": "S30",
+    "name": {
+      "en": "Tompkinsville",
+      "ko": "Tompkinsville"
+    },
+    "services": [
+      "SIR"
+    ],
+    "exits": [
+      {
+        "id": "502-40.637667--74.075021",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.6376665,
+          "longitude": -74.0750213
+        }
+      }
+    ]
+  },
+  {
+    "id": "505",
+    "stationId": "505",
+    "gtfsStopId": "S27",
+    "name": {
+      "en": "Grasmere",
+      "ko": "Grasmere"
+    },
+    "services": [
+      "SIR"
+    ],
+    "exits": [
+      {
+        "id": "505-40.603677--74.083663",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.6036771,
+          "longitude": -74.0836629
+        }
+      }
+    ]
+  },
+  {
+    "id": "complex-621",
+    "stationId": "complex-621",
+    "gtfsStopId": "J27",
+    "name": {
+      "en": "Broadway Junction",
+      "ko": "Broadway Junction"
+    },
+    "services": [
+      "A",
+      "C",
+      "J",
+      "L",
+      "Z"
+    ],
+    "exits": [
+      {
+        "id": "complex-621-40.678353--73.903933",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.6783526,
+          "longitude": -73.9039332
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,628 @@
+[
+  {
+    "id": "55",
+    "stationId": "55",
+    "gtfsStopId": "D40",
+    "name": {
+      "en": "Brighton Beach",
+      "ko": "브라이턴 비치"
+    },
+    "services": [
+      "B",
+      "Q"
+    ],
+    "exits": [
+      {
+        "id": "55-40.577594--73.962138",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.5775938,
+          "longitude": -73.9621381
+        }
+      },
+      {
+        "id": "55-40.577357--73.962085",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · B",
+          "ko": "계단 · B"
+        },
+        "coordinates": {
+          "latitude": 40.5773574,
+          "longitude": -73.9620846
+        }
+      },
+      {
+        "id": "55-40.577642--73.961906",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · C",
+          "ko": "계단 · C"
+        },
+        "coordinates": {
+          "latitude": 40.5776423,
+          "longitude": -73.9619059
+        }
+      },
+      {
+        "id": "55-40.577418--73.961838",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · D",
+          "ko": "계단 · D"
+        },
+        "coordinates": {
+          "latitude": 40.5774184,
+          "longitude": -73.9618378
+        }
+      },
+      {
+        "id": "55-40.577931--73.960524",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · E",
+          "ko": "계단 · E"
+        },
+        "coordinates": {
+          "latitude": 40.577931,
+          "longitude": -73.960524
+        }
+      },
+      {
+        "id": "55-40.577697--73.960438",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · F",
+          "ko": "계단 · F"
+        },
+        "coordinates": {
+          "latitude": 40.577697,
+          "longitude": -73.960438
+        }
+      },
+      {
+        "id": "55-40.577746--73.960231",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · G",
+          "ko": "계단 · G"
+        },
+        "coordinates": {
+          "latitude": 40.577746,
+          "longitude": -73.960231
+        }
+      },
+      {
+        "id": "55-40.577998--73.960193",
+        "type": "Escalator",
+        "description": {
+          "en": "Escalator · H",
+          "ko": "에스컬레이터 · H"
+        },
+        "coordinates": {
+          "latitude": 40.5779976,
+          "longitude": -73.960193
+        }
+      }
+    ]
+  },
+  {
+    "id": "62",
+    "stationId": "62",
+    "gtfsStopId": "B15",
+    "name": {
+      "en": "55 St",
+      "ko": "55번가"
+    },
+    "services": [
+      "D"
+    ],
+    "exits": [
+      {
+        "id": "62-40.631529--73.995626",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.6315288,
+          "longitude": -73.9956256
+        }
+      },
+      {
+        "id": "62-40.631709--73.995283",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · B",
+          "ko": "계단 · B"
+        },
+        "coordinates": {
+          "latitude": 40.631709,
+          "longitude": -73.995283
+        }
+      },
+      {
+        "id": "62-40.631389--73.995262",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · C",
+          "ko": "계단 · C"
+        },
+        "coordinates": {
+          "latitude": 40.631389,
+          "longitude": -73.995262
+        }
+      }
+    ]
+  },
+  {
+    "id": "71",
+    "stationId": "71",
+    "gtfsStopId": "N02",
+    "name": {
+      "en": "8 Av",
+      "ko": "8번 애비뉴"
+    },
+    "services": [
+      "N",
+      "W"
+    ],
+    "exits": [
+      {
+        "id": "71-40.634552--74.010726",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.634552,
+          "longitude": -74.010726
+        }
+      },
+      {
+        "id": "71-40.635552--74.012680",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · B",
+          "ko": "역 출입구 · B"
+        },
+        "coordinates": {
+          "latitude": 40.6355523,
+          "longitude": -74.0126802
+        }
+      }
+    ]
+  },
+  {
+    "id": "278",
+    "stationId": "278",
+    "gtfsStopId": "G05",
+    "name": {
+      "en": "Jamaica Center-Parsons/Archer",
+      "ko": "자메이카 센터–파슨스/아처"
+    },
+    "services": [
+      "E",
+      "J",
+      "Z"
+    ],
+    "exits": [
+      {
+        "id": "278-40.701672--73.802495",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.7016719,
+          "longitude": -73.8024947
+        }
+      },
+      {
+        "id": "278-40.702234--73.801859",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · B",
+          "ko": "계단 · B"
+        },
+        "coordinates": {
+          "latitude": 40.702234,
+          "longitude": -73.801859
+        }
+      },
+      {
+        "id": "278-40.701874--73.801747",
+        "type": "Stair/Escalator",
+        "description": {
+          "en": "Stair/Escalator · C",
+          "ko": "계단/에스컬레이터 · C"
+        },
+        "coordinates": {
+          "latitude": 40.701874,
+          "longitude": -73.801747
+        }
+      },
+      {
+        "id": "278-40.702324--73.799995",
+        "type": "Stair/Escalator",
+        "description": {
+          "en": "Stair/Escalator · D",
+          "ko": "계단/에스컬레이터 · D"
+        },
+        "coordinates": {
+          "latitude": 40.7023237,
+          "longitude": -73.799995
+        }
+      },
+      {
+        "id": "278-40.702821--73.799843",
+        "type": "Escalator",
+        "description": {
+          "en": "Escalator · E",
+          "ko": "에스컬레이터 · E"
+        },
+        "coordinates": {
+          "latitude": 40.702821,
+          "longitude": -73.799843
+        }
+      },
+      {
+        "id": "278-40.702363--73.799813",
+        "type": "Elevator",
+        "description": {
+          "en": "Elevator · F",
+          "ko": "엘리베이터 · F"
+        },
+        "coordinates": {
+          "latitude": 40.7023632,
+          "longitude": -73.7998129
+        }
+      },
+      {
+        "id": "278-40.702674--73.799786",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · G",
+          "ko": "계단 · G"
+        },
+        "coordinates": {
+          "latitude": 40.702674,
+          "longitude": -73.799786
+        }
+      }
+    ]
+  },
+  {
+    "id": "327",
+    "stationId": "327",
+    "gtfsStopId": "137",
+    "name": {
+      "en": "Chambers St",
+      "ko": "체임버스 스트리트"
+    },
+    "services": [
+      "1",
+      "2",
+      "3"
+    ],
+    "exits": [
+      {
+        "id": "327-40.715553--74.009494",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.7155528,
+          "longitude": -74.0094938
+        }
+      },
+      {
+        "id": "327-40.715445--74.009467",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · B",
+          "ko": "계단 · B"
+        },
+        "coordinates": {
+          "latitude": 40.7154451,
+          "longitude": -74.009467
+        }
+      },
+      {
+        "id": "327-40.715713--74.009329",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · C",
+          "ko": "계단 · C"
+        },
+        "coordinates": {
+          "latitude": 40.7157126,
+          "longitude": -74.0093289
+        }
+      },
+      {
+        "id": "327-40.715392--74.009199",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · D",
+          "ko": "계단 · D"
+        },
+        "coordinates": {
+          "latitude": 40.7153917,
+          "longitude": -74.0091988
+        }
+      },
+      {
+        "id": "327-40.715562--74.009076",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · E",
+          "ko": "계단 · E"
+        },
+        "coordinates": {
+          "latitude": 40.7155616,
+          "longitude": -74.009076
+        }
+      },
+      {
+        "id": "327-40.715829--74.009318",
+        "type": "Elevator",
+        "description": {
+          "en": "Elevator · F",
+          "ko": "엘리베이터 · F"
+        },
+        "coordinates": {
+          "latitude": 40.7158293,
+          "longitude": -74.009318
+        }
+      }
+    ]
+  },
+  {
+    "id": "383",
+    "stationId": "383",
+    "gtfsStopId": "408",
+    "name": {
+      "en": "183 St",
+      "ko": "183번가"
+    },
+    "services": [
+      "4"
+    ],
+    "exits": [
+      {
+        "id": "383-40.858502--73.904100",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.8585019,
+          "longitude": -73.9041003
+        }
+      },
+      {
+        "id": "383-40.858267--73.904099",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · B",
+          "ko": "계단 · B"
+        },
+        "coordinates": {
+          "latitude": 40.858267,
+          "longitude": -73.904099
+        }
+      },
+      {
+        "id": "383-40.858472--73.903709",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · C",
+          "ko": "계단 · C"
+        },
+        "coordinates": {
+          "latitude": 40.8584724,
+          "longitude": -73.9037088
+        }
+      }
+    ]
+  },
+  {
+    "id": "392",
+    "stationId": "392",
+    "gtfsStopId": "621",
+    "name": {
+      "en": "125 St",
+      "ko": "125번가"
+    },
+    "services": [
+      "4",
+      "5",
+      "6"
+    ],
+    "exits": [
+      {
+        "id": "392-40.804262--73.937656",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.8042618,
+          "longitude": -73.9376559
+        }
+      },
+      {
+        "id": "392-40.804177--73.937441",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · B",
+          "ko": "계단 · B"
+        },
+        "coordinates": {
+          "latitude": 40.8041772,
+          "longitude": -73.9374408
+        }
+      },
+      {
+        "id": "392-40.804614--73.937402",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · C",
+          "ko": "계단 · C"
+        },
+        "coordinates": {
+          "latitude": 40.8046136,
+          "longitude": -73.9374016
+        }
+      },
+      {
+        "id": "392-40.804424--73.937230",
+        "type": "Elevator",
+        "description": {
+          "en": "Elevator · D",
+          "ko": "엘리베이터 · D"
+        },
+        "coordinates": {
+          "latitude": 40.8044243,
+          "longitude": -73.9372301
+        }
+      },
+      {
+        "id": "392-40.804538--73.937181",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · E",
+          "ko": "계단 · E"
+        },
+        "coordinates": {
+          "latitude": 40.8045377,
+          "longitude": -73.9371809
+        }
+      }
+    ]
+  },
+  {
+    "id": "409",
+    "stationId": "409",
+    "gtfsStopId": "638",
+    "name": {
+      "en": "Spring St",
+      "ko": "스프링 스트리트"
+    },
+    "services": [
+      "6"
+    ],
+    "exits": [
+      {
+        "id": "409-40.722408--73.997477",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.722408,
+          "longitude": -73.9974768
+        }
+      },
+      {
+        "id": "409-40.722477--73.997419",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · B",
+          "ko": "계단 · B"
+        },
+        "coordinates": {
+          "latitude": 40.7224774,
+          "longitude": -73.9974188
+        }
+      },
+      {
+        "id": "409-40.722103--73.996812",
+        "type": "Easement - Street",
+        "description": {
+          "en": "Easement - Street · C",
+          "ko": "도로 연결 통로 · C"
+        },
+        "coordinates": {
+          "latitude": 40.7221032,
+          "longitude": -73.9968123
+        }
+      },
+      {
+        "id": "409-40.722226--73.996790",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · D",
+          "ko": "계단 · D"
+        },
+        "coordinates": {
+          "latitude": 40.7222255,
+          "longitude": -73.9967904
+        }
+      }
+    ]
+  },
+  {
+    "id": "471",
+    "stationId": "471",
+    "gtfsStopId": "726",
+    "name": {
+      "en": "34 St-Hudson Yards",
+      "ko": "34번가–허드슨 야즈"
+    },
+    "services": [
+      "7"
+    ],
+    "exits": [
+      {
+        "id": "471-40.754904--74.001323",
+        "type": "Elevator",
+        "description": {
+          "en": "Elevator · A",
+          "ko": "엘리베이터 · A"
+        },
+        "coordinates": {
+          "latitude": 40.754904,
+          "longitude": -74.001323
+        }
+      },
+      {
+        "id": "471-40.754961--74.000927",
+        "type": "Stair/Escalator",
+        "description": {
+          "en": "Stair/Escalator · B",
+          "ko": "계단/에스컬레이터 · B"
+        },
+        "coordinates": {
+          "latitude": 40.7549612,
+          "longitude": -74.0009265
+        }
+      },
+      {
+        "id": "471-40.755766--74.000236",
+        "type": "Stair/Escalator",
+        "description": {
+          "en": "Stair/Escalator · C",
+          "ko": "계단/에스컬레이터 · C"
+        },
+        "coordinates": {
+          "latitude": 40.755766,
+          "longitude": -74.0002359
+        }
+      }
+    ]
+  }
+]

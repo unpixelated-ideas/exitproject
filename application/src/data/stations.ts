@@ -1,3 +1,7 @@
+import additions from './opening-ballot-additions.json';
+import january4Data from './january4-ballot.json';
+import april1Data from './april1-ballot.json';
+import remainingData from './remaining-ballots.json';
 import type { Station, StationProvider } from '../domain/types';
 const descriptions = [
     { en: 'NW corner · Alder Avenue & Example Street', ko: '북서쪽 모퉁이 · 앨더 애비뉴와 예시 스트리트' },
@@ -253,4 +257,14 @@ export const stations: Station[] = [
     ]
   }
 ];
-export const stationProvider: StationProvider = { getStations: ids => ids.map(id => { const station = [...stations, ...archivedStations].find(s => s.id === id); if (!station) throw new Error(`Unknown station ${id}`); return station; }) };
+stations.push(...additions as Station[]);
+export const january4Stations: Station[] = january4Data as Station[];
+export const april1Stations: Station[] = april1Data as Station[];
+export const remainingStations: Station[] = remainingData as Station[];
+export const allScheduledStations: Station[] = [...stations, ...january4Stations, ...april1Stations, ...remainingStations];
+const stationsById = new Map([...allScheduledStations, ...archivedStations].map(station => [station.id, station]));
+export const stationProvider: StationProvider = { getStations: ids => ids.map(id => {
+    const station = stationsById.get(id);
+    if (!station) throw new Error(`Unknown station ${id}`);
+    return station;
+}) };

@@ -113,3 +113,30 @@ main:has(.archive-directory){max-width:1800px}
 }
 
 .archive-undated-count{color:#d00000;font-weight:800}
+
+.voting-planner{max-width:1000px;margin-inline:auto;padding:28px}
+.planner-summary{display:grid;gap:6px;padding:18px;background:var(--soft);border:1px solid var(--border);border-radius:4px;margin-block:24px}
+.planner-summary span,.planner-empty{color:var(--muted)}
+.planner-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.planner-table caption{text-align:left;color:var(--muted);padding-bottom:14px}
+.planner-table th,.planner-table td{text-align:left;padding:14px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+.planner-table thead{background:var(--soft)}
+.planner-table th:first-child{width:40%}
+.planner-table small{display:block;font-size:.75rem;color:var(--muted);font-weight:400;margin-top:4px}
+.planner-table .planner-count{font-weight:700;font-variant-numeric:tabular-nums;font-size:1.1rem}
+.planner-table summary{cursor:pointer;min-height:24px}
+.planner-table ul{padding-left:18px;font-size:.8rem}
+.planner-table li+li{margin-top:8px}
+.planner-special{background:var(--soft)}
+@media(max-width:640px){.voting-planner{padding:20px 14px}.planner-table th,.planner-table td{padding:12px 6px}.planner-table{font-size:.8rem}}
+
+/* Display-only voting-period selector alongside the existing reset action. */
+.period-controls{display:flex;align-items:flex-end;gap:14px;max-width:100%}
+.period-picker{display:grid;gap:5px;font-size:.75rem;color:var(--muted);min-width:0}
+.period-picker select{font-size:.875rem;color:var(--text);width:210px;max-width:100%}
+.period-controls .reset-button{align-self:flex-end;margin-bottom:10px}
+@media(max-width:800px){.period-panel{flex-wrap:wrap}.period-actions{max-width:100%}.period-controls{flex-wrap:wrap}}
+
+/* Keep the full opening ballot readable as its station list grows. */
+.ballot-steps{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+@media(max-width:640px){.ballot-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.ballot-steps button{min-width:0;overflow-wrap:anywhere}}

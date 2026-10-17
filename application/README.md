@@ -76,3 +76,23 @@ The Archive includes 493 operating stations in 444 station/complex rows, with se
 The directory snapshot, source provenance, guarded identifier corrections, and offline rebuild instructions are documented in [reference-files/archive/README.md](reference-files/archive/README.md). Generated data lives in `src/data/archive-directory.json`, separate from the active ballot fixtures. English/Korean interface text and existing themes are supported. The full directory loads only when the Archive is opened.
 
 Resumable implementation checkpoints are saved in `../ARCHIVE_IMPLEMENTATION.md`.
+
+## Unlinked voting planner
+
+Open `#/voting-planner` directly to view January 1, all 52 Mondays in 2027, and the separate April 1 special. No site navigation links to this page. Totals and expandable station/complex details come from the same `src/data/archive-directory.json` rows as the Archive, using exact voting dates and excluding elevator counts. Archive updates appear in both pages with the same rebuild/deployment. Zero totals show unassigned dates; undated entries and unexpected dates are reported separately. The page is unlinked, not access controlled; anyone with its URL can view it.
+
+The completed 2027 plan is stored in `src/data/voting-schedule.json`, separating the 103 fixed manual assignments from 341 generated assignments. The archive builder reads this schedule, so rebuilding the directory preserves dates. `python3 scripts/balance-schedule.py` reproduces the allocation with a fixed random seed and preserves manual assignments. The balance report is in `reference-files/planning/2027-balance.md`. January 1 and November 29 accept generated additions. April 1 stays fixed at 30 exits, and December 27 stays fixed at 40. Every other voting date has 37 or 38 exits, including November 29 at 38 (below its ceiling of 39).
+
+## Opening ballot
+
+The January 1–3, 2027 ballot now includes all nine scheduled stations. The original three stations retain their entrance IDs and saved-draft compatibility. The other six use `src/data/opening-ballot-additions.json`, rebuilt from the reviewed entrance inventory with `python3 scripts/build-opening-ballot.py`. There are 37 non-elevator entrances plus the three elevators already included in the original ballot. All nine stations participate in completion checks, review, and simulated submission. The period dropdown remains display-only.
+
+The period selector now switches between January 1–3 and January 4–10. January 4 has nine stations, 37 non-elevator entrances and four entrance elevators, generated with `python3 scripts/build-opening-ballot.py --date 2027-01-04`. Each ballot has its own saved draft and introduction state. Switching remounts the ballot to reset navigation and restore the selected period’s draft. Other dates remain listed but disabled until their ballots are implemented.
+
+April 1 is also selectable as an April 1–20 special, with all 30 scheduled one-exit station/complex entries (including Broadway Junction as one combined entry). It has its own saved draft and review/submission validation. Rebuild its entrance data with `python3 scripts/build-opening-ballot.py --date 2027-04-01`.
+
+## All 2027 ballots
+
+All 54 voting dates are now selectable. The Archive schedule determines each ballot's station/complex membership. The 51 additional periods use `src/data/remaining-ballots.json`, rebuilt with `python3 scripts/build-opening-ballot.py --date all`. The generator applies the same guarded entrance corrections as the Archive and keeps merged complexes together. Full coverage is 444 station/complex entries representing all 493 operating stations, with 2,018 non-elevator entrances and 102 entrance elevators. Existing January 1, January 4 and April 1 identities and drafts are retained. Each remaining period has its own stable draft identity.
+
+Regular ballots run Monday through Sunday, except the final period, December 27–31, 2027. April 1 remains a separate April 1–20 event alongside the March 29 weekly ballot. The April special closes April 20. All periods support maps, sequential voting, per-station completion, review and simulated submission. Large complexes use temporary labels A through Z, then AA, AB and onward. English station names remain the fallback where Korean names have not been supplied. Votes remain browser-local; submissions are still simulated.

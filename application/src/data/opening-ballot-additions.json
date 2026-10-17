@@ -1,0 +1,376 @@
+[
+  {
+    "id": "180",
+    "stationId": "180",
+    "gtfsStopId": "A47",
+    "name": {
+      "en": "Kingston-Throop Avs",
+      "ko": "킹스턴–스룹 애비뉴"
+    },
+    "services": [
+      "C"
+    ],
+    "exits": [
+      {
+        "id": "180-40.679685--73.941350",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.6796847,
+          "longitude": -73.94135
+        }
+      },
+      {
+        "id": "180-40.679804--73.941119",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · B",
+          "ko": "계단 · B"
+        },
+        "coordinates": {
+          "latitude": 40.679804,
+          "longitude": -73.941119
+        }
+      },
+      {
+        "id": "180-40.680063--73.940479",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · C",
+          "ko": "계단 · C"
+        },
+        "coordinates": {
+          "latitude": 40.6800631,
+          "longitude": -73.940479
+        }
+      },
+      {
+        "id": "180-40.680021--73.940243",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · D",
+          "ko": "계단 · D"
+        },
+        "coordinates": {
+          "latitude": 40.6800207,
+          "longitude": -73.940243
+        }
+      }
+    ]
+  },
+  {
+    "id": "236",
+    "stationId": "236",
+    "gtfsStopId": "F20",
+    "name": {
+      "en": "Bergen St",
+      "ko": "버겐 스트리트"
+    },
+    "services": [
+      "F",
+      "G"
+    ],
+    "exits": [
+      {
+        "id": "236-40.685586--73.991461",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.6855861,
+          "longitude": -73.991461
+        }
+      },
+      {
+        "id": "236-40.685456--73.991136",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · B",
+          "ko": "계단 · B"
+        },
+        "coordinates": {
+          "latitude": 40.6854562,
+          "longitude": -73.9911364
+        }
+      },
+      {
+        "id": "236-40.686732--73.990689",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · C",
+          "ko": "계단 · C"
+        },
+        "coordinates": {
+          "latitude": 40.6867325,
+          "longitude": -73.9906886
+        }
+      },
+      {
+        "id": "236-40.686872--73.990513",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · D",
+          "ko": "계단 · D"
+        },
+        "coordinates": {
+          "latitude": 40.6868716,
+          "longitude": -73.9905133
+        }
+      },
+      {
+        "id": "236-40.686611--73.990400",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · E",
+          "ko": "계단 · E"
+        },
+        "coordinates": {
+          "latitude": 40.6866112,
+          "longitude": -73.9904
+        }
+      },
+      {
+        "id": "236-40.686735--73.990291",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · F",
+          "ko": "계단 · F"
+        },
+        "coordinates": {
+          "latitude": 40.6867354,
+          "longitude": -73.9902909
+        }
+      }
+    ]
+  },
+  {
+    "id": "265",
+    "stationId": "265",
+    "gtfsStopId": "G12",
+    "name": {
+      "en": "Grand Av-Newtown",
+      "ko": "그랜드 애비뉴–뉴타운"
+    },
+    "services": [
+      "M",
+      "R"
+    ],
+    "exits": [
+      {
+        "id": "265-40.737508--73.877416",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.7375079,
+          "longitude": -73.8774159
+        }
+      },
+      {
+        "id": "265-40.737329--73.877210",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · B",
+          "ko": "계단 · B"
+        },
+        "coordinates": {
+          "latitude": 40.7373292,
+          "longitude": -73.8772103
+        }
+      },
+      {
+        "id": "265-40.736102--73.877166",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · C",
+          "ko": "계단 · C"
+        },
+        "coordinates": {
+          "latitude": 40.7361017,
+          "longitude": -73.8771659
+        }
+      },
+      {
+        "id": "265-40.735895--73.876883",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · D",
+          "ko": "계단 · D"
+        },
+        "coordinates": {
+          "latitude": 40.7358946,
+          "longitude": -73.8768826
+        }
+      },
+      {
+        "id": "265-40.736292--73.876417",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · E",
+          "ko": "계단 · E"
+        },
+        "coordinates": {
+          "latitude": 40.736292,
+          "longitude": -73.8764169
+        }
+      }
+    ]
+  },
+  {
+    "id": "320",
+    "stationId": "320",
+    "gtfsStopId": "130",
+    "name": {
+      "en": "23 St",
+      "ko": "23번가"
+    },
+    "services": [
+      "1"
+    ],
+    "exits": [
+      {
+        "id": "320-40.744006--73.995914",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.7440065,
+          "longitude": -73.9959143
+        }
+      },
+      {
+        "id": "320-40.744325--73.995834",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · B",
+          "ko": "계단 · B"
+        },
+        "coordinates": {
+          "latitude": 40.7443252,
+          "longitude": -73.9958344
+        }
+      },
+      {
+        "id": "320-40.743874--73.995632",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · C",
+          "ko": "계단 · C"
+        },
+        "coordinates": {
+          "latitude": 40.7438738,
+          "longitude": -73.9956323
+        }
+      },
+      {
+        "id": "320-40.744114--73.995324",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · D",
+          "ko": "계단 · D"
+        },
+        "coordinates": {
+          "latitude": 40.7441139,
+          "longitude": -73.995324
+        }
+      }
+    ]
+  },
+  {
+    "id": "368",
+    "stationId": "368",
+    "gtfsStopId": "610",
+    "name": {
+      "en": "Morrison Av-Soundview",
+      "ko": "모리슨 애비뉴–사운드뷰"
+    },
+    "services": [
+      "6"
+    ],
+    "exits": [
+      {
+        "id": "368-40.829517--73.874860",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · A",
+          "ko": "계단 · A"
+        },
+        "coordinates": {
+          "latitude": 40.829517,
+          "longitude": -73.87486
+        }
+      },
+      {
+        "id": "368-40.829360--73.874798",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · B",
+          "ko": "계단 · B"
+        },
+        "coordinates": {
+          "latitude": 40.8293598,
+          "longitude": -73.8747982
+        }
+      },
+      {
+        "id": "368-40.829641--73.874447",
+        "type": "Stair",
+        "description": {
+          "en": "Stair · C",
+          "ko": "계단 · C"
+        },
+        "coordinates": {
+          "latitude": 40.829641,
+          "longitude": -73.874447
+        }
+      }
+    ]
+  },
+  {
+    "id": "443",
+    "stationId": "443",
+    "gtfsStopId": "502",
+    "name": {
+      "en": "Baychester Av",
+      "ko": "베이체스터 애비뉴"
+    },
+    "services": [
+      "5"
+    ],
+    "exits": [
+      {
+        "id": "443-40.879519--73.837958",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · A",
+          "ko": "역 출입구 · A"
+        },
+        "coordinates": {
+          "latitude": 40.879519,
+          "longitude": -73.837958
+        }
+      },
+      {
+        "id": "443-40.879330--73.837858",
+        "type": "Station House",
+        "description": {
+          "en": "Station House · B",
+          "ko": "역 출입구 · B"
+        },
+        "coordinates": {
+          "latitude": 40.87933,
+          "longitude": -73.837858
+        }
+      }
+    ]
+  }
+]
