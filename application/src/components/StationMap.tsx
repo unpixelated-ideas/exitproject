@@ -26,7 +26,7 @@ export function StationMap({ station, assignments, selectedExitId, onSelectExit,
         const map = L.map(container.current, { maxZoom: 21, scrollWheelZoom: false });
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxNativeZoom: 19, maxZoom: 21,
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors',
         }).on('tileerror', () => setTileError(true)).addTo(map);
         const points: L.LatLngTuple[] = [];
         const currentMarkers = markers.current;

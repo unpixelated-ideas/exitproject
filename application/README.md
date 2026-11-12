@@ -96,3 +96,13 @@ April 1 is also selectable as an April 1–20 special, with all 30 scheduled one
 All 54 voting dates are now selectable. The Archive schedule determines each ballot's station/complex membership. The 51 additional periods use `src/data/remaining-ballots.json`, rebuilt with `python3 scripts/build-opening-ballot.py --date all`. The generator applies the same guarded entrance corrections as the Archive and keeps merged complexes together. Full coverage is 444 station/complex entries representing all 493 operating stations, with 2,018 non-elevator entrances and 102 entrance elevators. Existing January 1, January 4 and April 1 identities and drafts are retained. Each remaining period has its own stable draft identity.
 
 Regular ballots run Monday through Sunday, except the final period, December 27–31, 2027. April 1 remains a separate April 1–20 event alongside the March 29 weekly ballot. The April special closes April 20. All periods support maps, sequential voting, per-station completion, review and simulated submission. Large complexes use temporary labels A through Z, then AA, AB and onward. English station names remain the fallback where Korean names have not been supplied. Votes remain browser-local; submissions are still simulated.
+
+### Install with Microsoft Edge on Windows
+
+The production build includes a web app manifest and 192px/512px application icons. Relative identity, launch and scope URLs support both root hosting and the GitHub Pages `/exitproject/` directory. The app uses a standalone window. No service worker is registered; a network connection is required to load the application.
+
+After deployment, refresh https://unpixelated-ideas.github.io/exitproject/ in Edge. Use the address-bar install icon or **Settings and more → More tools → Apps → Install this site as an app**. When testing changed manifest metadata, remove and reinstall an existing copy if needed. Verify the icon/name, homepage launch, navigation, external links, narrow windows and Windows display scaling in Windows Edge. Browser version and managed-device policies can affect installation availability.
+
+Publish updates through the normal workflow, then reload/reopen the app. Already-open windows continue running their loaded code, and GitHub Pages HTTP caching can briefly delay updates.
+
+The display board requires a separate backend for live arrivals/weather. Set `VITE_BOARD_API_URL` to its HTTPS base URL in the build environment, with CORS allowing this website's origin. The default `/board-api` uses Vite's local development/preview proxy; GitHub Pages does not provide that server. Never place private credentials in `VITE_` variables, which are bundled into browser assets. Ballot submission remains a demonstration.

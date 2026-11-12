@@ -1,5 +1,10 @@
 # Update Log
 
+## v0.7 — November 11, 2026
+
+- Added subway departure boards, allowing users to create, view, and share boards for any NYC subway or Staten Island Railway station.
+- Updated the site so Microsoft Edge recognizes it as a progressive web app (PWA).
+
 ## v0.6 — October 17, 2026
 
 - Refined the archive page for a cleaner experience.
