@@ -105,4 +105,4 @@ After deployment, refresh https://unpixelated-ideas.github.io/exitproject/ in Ed
 
 Publish updates through the normal workflow, then reload/reopen the app. Already-open windows continue running their loaded code, and GitHub Pages HTTP caching can briefly delay updates.
 
-The display board requires a separate backend for live arrivals/weather. Set `VITE_BOARD_API_URL` to its HTTPS base URL in the build environment, with CORS allowing this website's origin. The default `/board-api` uses Vite's local development/preview proxy; GitHub Pages does not provide that server. Never place private credentials in `VITE_` variables, which are bundled into browser assets. Ballot submission remains a demonstration.
+The display board runs entirely on GitHub Pages: browsers fetch public MTA arrivals and NWS weather directly. No separate backend, API key, or hosting configuration is required. The Pages workflow prepares compact schedule patterns before building; a generated snapshot is included in `public/board-schedule.json` for local builds. See `arrivals/README.md` for refresh details and limitations. Ballot submission remains a demonstration.

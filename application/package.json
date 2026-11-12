@@ -12,6 +12,7 @@
     "preview": "vite preview --host 127.0.0.1"
   },
   "dependencies": {
+    "gtfs-realtime-bindings": "2.2.0",
     "i18next": "^25.3.0",
     "leaflet": "1.9.4",
     "react": "^19.1.0",

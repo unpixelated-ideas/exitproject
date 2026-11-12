@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: exit-project-arrivals
+    runtime: python
+    plan: free
+    rootDir: application
+    buildCommand: pip install -r arrivals/requirements.txt
+    startCommand: python arrivals/start.py
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: BOARD_HOST
+        value: 0.0.0.0
+      - key: BOARD_WEB_ORIGIN
+        value: https://unpixelated-ideas.github.io

@@ -28,10 +28,11 @@ jobs:
       - uses: actions/configure-pages@v5
       - run: pnpm install --frozen-lockfile
         working-directory: application
+      - name: Prepare subway trip patterns
+        run: python3 scripts/prepare-board-schedule.py
+        working-directory: application
       - run: pnpm lint && pnpm test && pnpm build
         working-directory: application
-        env:
-          VITE_BOARD_API_URL: ${{ vars.VITE_BOARD_API_URL }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: application/dist

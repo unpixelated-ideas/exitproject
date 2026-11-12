@@ -1,19 +1,34 @@
-# Display board
+# Display board: GitHub Pages MVP
 
-From the application directory, set up the arrivals service in a Python virtual environment.
+The board now runs entirely in the browser. No Python server, hosting account,
+API key, or `VITE_BOARD_API_URL` variable is required. The hidden route remains
+`#/display-board`.
 
-```sh
-python3 -m venv /tmp/exit-board-venv
-/tmp/exit-board-venv/bin/python -m pip install -r arrivals/requirements.txt
-/tmp/exit-board-venv/bin/python -B arrivals/server.py
-```
+Run `pnpm dev` from `application` for local development. `pnpm build` produces
+the self-contained Pages site, including `public/board-schedule.json`.
 
-In a second terminal, run `pnpm dev` and open `http://127.0.0.1:5173/#/display-board`. Vite proxies board requests to the local service. The home page does not link to the board.
+The Pages workflow automatically runs `python3 scripts/prepare-board-schedule.py`
+before building. It downloads MTA's supplemented schedule and creates compact,
+deduplicated trip patterns, destinations and stop names. The generated snapshot
+is also included locally so ordinary builds need no schedule download. To refresh
+it manually, run that same command (or pass a local GTFS zip path). A failed
+schedule preparation fails deployment and leaves the previously published site
+intact. New deployments refresh the schedule; no visitor downloads the GTFS zip.
 
-The frontend bundles the station picker catalog, so station search works on GitHub Pages even when the arrivals service is unavailable. The service reads the project’s station catalog and caches the eight subway and SIR GTFS Realtime feeds. `/stations` lists station complexes and `/arrivals?station=611` returns Times Square–42 St / Port Authority predictions. Times are Unix seconds. Predictions can include terminating trains. Set `BOARD_GTFS_ZIP` to the current MTA supplemented subway schedule to use matching trip headsigns and restore preceding stops omitted from live updates. Unmatched trips use the last stop in the live stop list as a destination estimate.
+The browser fetches MTA's public subway/SIR protobuf feeds directly, decodes them
+with MobilityData's GTFS bindings, caches snapshots across station changes, and
+refreshes every 25 seconds. Feeds older than 90 seconds are withheld. Partial
+feed failures do not suppress healthy feed families. All subway feeds are checked
+to retain trains during diversions. SIR uses its own feed.
 
-For a hosted board, serve the arrivals service behind an HTTPS reverse proxy and build the frontend with `VITE_BOARD_API_URL` set to that service’s base URL. For a separate frontend origin, set `BOARD_WEB_ORIGIN` on the service to the frontend origin. The bundled server listens on loopback port 8787. GitHub Pages hosts only the frontend.
+Full-color weather uses NWS directly, with nearby station discovery and recent
+observations. The browser supplies its User-Agent; no custom identification header
+or private credential is used. Weather failure does not block arrivals.
 
-The Full-color board requests `/weather?station=611` for current National Weather Service observations near Times Square. The service identifies itself to NWS with the project's public URL, caches station discovery and observations, and returns HTTP 503 when it cannot obtain a recent temperature. Arrival requests run separately.
+This depends on MTA/NWS continuing to permit browser access. Schedule matches
+are validated against live stop order; unmatched or diverted trips use the last
+reported live stop as the destination estimate. Seoul movement is an estimate
+from predictions, not GPS tracking.
 
-For GitHub Pages builds, set the repository Actions variable `VITE_BOARD_API_URL` to the HTTPS base URL of the hosted arrivals service. The Pages workflow passes it to Vite during the build. Set `BOARD_WEB_ORIGIN=https://unpixelated-ideas.github.io` on that service to allow requests from Pages.
+The Python service files and root Render blueprint are legacy tooling, unused by
+the MVP. They can be retained for comparison or a future centralized service.

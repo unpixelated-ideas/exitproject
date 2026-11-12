@@ -234,7 +234,9 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         url = urlsplit(self.path)
         station_id = parse_qs(url.query).get("station", [""])[0]
-        if url.path == "/stations":
+        if url.path == "/health":
+            status, data = 200, {"status": "ok"}
+        elif url.path == "/stations":
             status, data = 200, sorted(map(station_summary, CATALOG.values()),
                                        key=lambda station: station["name"])
         elif url.path == "/weather" and station_id in CATALOG:
@@ -262,6 +264,8 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    with ThreadingHTTPServer(("127.0.0.1", 8787), Handler) as server:
-        print("Arrivals service at http://127.0.0.1:8787", flush=True)
+    host = os.environ.get("BOARD_HOST", "127.0.0.1")
+    port = int(os.environ.get("PORT", "8787"))
+    with ThreadingHTTPServer((host, port), Handler) as server:
+        print(f"Arrivals service listening on {host}:{port}", flush=True)
         server.serve_forever()

@@ -1,3 +1,5 @@
+import { loadBoardArrivals } from '../services/boardArrivals';
+import { loadBoardWeather } from '../services/boardWeather';
 import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getTheme } from '../data/themes';
@@ -15,7 +17,7 @@ import { koreanBoardStation } from '../data/boardKoreanNames';
 
 const modes = ['information', 'color', 'led', 'seoul'] as const;
 const limits = { information: 6, color: 2, led: 4, seoul: 2 };
-const api = (import.meta.env.VITE_BOARD_API_URL || '/board-api').replace(/\/$/, '');
+
 const zone = 'America/New_York';
 type Mode = typeof modes[number];
 type Station = { id: string; name: string };
@@ -346,9 +348,7 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
     async function loadWeather() {
       let delay = 600_000;
       try {
-        const response = await fetch(`${api}/weather?station=${encodeURIComponent(station)}`, { signal: controller.signal });
-        if (!response.ok) throw new Error();
-        const observation: Weather = await response.json();
+        const observation: Weather = await loadBoardWeather(station, controller.signal);
         if (!controller.signal.aborted) setWeather({ station, observation });
       } catch {
         delay = 60_000;
@@ -369,9 +369,7 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
     let timer: number;
     async function refresh() {
       try {
-        const response = await fetch(`${api}/arrivals?station=${encodeURIComponent(station)}`, { signal: controller.signal });
-        if (!response.ok && response.status !== 503) throw new Error();
-        const result: Snapshot = await response.json();
+        const result: Snapshot = await loadBoardArrivals(station);
         if (!controller.signal.aborted) {
           setSnapshot(previous => retainArrivals(previous, result));
           setFailed(false);
