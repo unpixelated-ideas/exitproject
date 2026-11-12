@@ -30,6 +30,8 @@ jobs:
         working-directory: application
       - run: pnpm lint && pnpm test && pnpm build
         working-directory: application
+        env:
+          VITE_BOARD_API_URL: ${{ vars.VITE_BOARD_API_URL }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: application/dist

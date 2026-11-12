@@ -4,7 +4,7 @@ import { getTheme } from '../data/themes';
 import { storage } from '../services/storage';
 import { ServiceBullet } from './ServiceBullet';
 import { availableLanguages, languages } from '../data/languages';
-import { boardPlatforms, destinationBorough, platformDirections, stationServices } from '../data/boardPlatforms';
+import { boardPlatforms, boardStations, destinationBorough, platformDirections, stationServices } from '../data/boardPlatforms';
 import { BoardFitText } from './BoardFitText';
 import { BoardServicePicker } from './BoardServicePicker';
 import { BoardStationSearch } from './BoardStationSearch';
@@ -311,7 +311,7 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
   const [weather, setWeather] = useState<{ station: string; observation: Weather }>();
   const [copyStatus, setCopyStatus] = useState<'copied' | 'manual'>();
   const [manualLink, setManualLink] = useState('');
-  const [stations, setStations] = useState<Station[]>([]);
+  const stations = boardStations;
   const [snapshot, setSnapshot] = useState<Snapshot>();
   const [failed, setFailed] = useState(false);
   const [now, setNow] = useState(Date.now);
@@ -363,22 +363,6 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
   useEffect(() => {
     const clock = window.setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(clock);
-  }, []);
-  useEffect(() => {
-    const controller = new AbortController();
-    let timer: number;
-    async function loadStations() {
-      try {
-        const response = await fetch(`${api}/stations`, { signal: controller.signal });
-        if (!response.ok) throw new Error();
-        const list: Station[] = await response.json();
-        if (!controller.signal.aborted) setStations(list);
-      } catch {
-        if (!controller.signal.aborted) timer = window.setTimeout(loadStations, 15000);
-      }
-    }
-    void loadStations();
-    return () => { controller.abort(); clearTimeout(timer); };
   }, []);
   useEffect(() => {
     const controller = new AbortController();

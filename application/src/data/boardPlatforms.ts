@@ -1,4 +1,11 @@
 import stations from './mta-stations.json';
+import complexes from './mta-complexes.json';
+
+// Station selection is static and remains available without the realtime service.
+export const boardStations = complexes
+  .filter(station => station.gtfs_stop_ids)
+  .map(station => ({ id: station.complex_id, name: station.display_name }))
+  .sort((left, right) => left.name.localeCompare(right.name));
 
 export const boardPlatforms = new Map<string, typeof stations>();
 export const platformDirections = new Map<string, string>();
