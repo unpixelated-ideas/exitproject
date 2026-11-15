@@ -262,10 +262,10 @@ const koreanNames: Record<string, string> = {
   '59 St-Columbus Circle': '59번가–컬럼버스 서클', '135 St': '135번가', 'Inwood-207 St': '인우드–207번가',
 };
 
-function BilingualBoardStation({ english, korean }: { english: string; korean: string }) {
+function BilingualBoardStation({ english, korean, showEnglish }: { english: string; korean: string; showEnglish: boolean }) {
   return <span className="board-bilingual-station">
     <BoardFitText text={korean} />
-    <small lang="en"><BoardFitText text={english} /></small>
+    {showEnglish && <small lang="en"><BoardFitText text={english} /></small>}
   </span>;
 }
 
@@ -310,6 +310,8 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
     (shared.get('weather') ?? (query ? 'on' : saved('weather', 'on'))) !== 'off');
   const [weatherUnit, setWeatherUnit] = useState(() =>
     (shared.get('units') ?? (query ? 'f' : saved('weather-unit', 'f'))) === 'c' ? 'c' : 'f');
+  const [showEnglishStations, setShowEnglishStations] = useState(() =>
+    (shared.get('englishStations') ?? saved('english-stations', 'on')) !== 'off');
   const [weather, setWeather] = useState<{ station: string; observation: Weather }>();
   const [copyStatus, setCopyStatus] = useState<'copied' | 'manual'>();
   const [manualLink, setManualLink] = useState('');
@@ -320,7 +322,7 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
   const [presenting, setPresenting] = useState(false);
   const [previewWidth, setPreviewWidth] = useState<number>();
   const panel = useRef<HTMLElement>(null);
-  const screen = useRef<HTMLElement>(null);
+  const screen = useRef<HTMLDivElement>(null);
   const settings = useRef<HTMLDialogElement>(null);
   const language = i18n.resolvedLanguage === 'ko' ? 'ko' : 'en';
   const name = (label: string) => {
@@ -339,7 +341,8 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
     storage.write('board:color-theme', darkBoard ? 'dark' : 'light');
     storage.write('board:weather', weatherEnabled ? 'on' : 'off');
     storage.write('board:weather-unit', weatherUnit);
-  }, [clockFormat, showDirectionDetail, darkBoard, weatherEnabled, weatherUnit]);
+    storage.write('board:english-stations', showEnglishStations ? 'on' : 'off');
+  }, [clockFormat, showDirectionDetail, darkBoard, weatherEnabled, weatherUnit, showEnglishStations]);
 
   useEffect(() => {
     if (mode !== 'color' || !weatherEnabled) return;
@@ -503,6 +506,7 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
     params.set('colorTheme', darkBoard ? 'dark' : 'light');
     params.set('weather', weatherEnabled ? 'on' : 'off');
     params.set('units', weatherUnit);
+    params.set('englishStations', showEnglishStations ? 'on' : 'off');
     if (approaches.includes(approach)) params.set('approach', approach);
     const url = new URL(window.location.href);
     url.hash = `/display-board?${params}`;
@@ -523,7 +527,7 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
     setMode(next);
   }
 
-  return <main id="main" tabIndex={-1} className="display-board" data-mode={mode} data-presenting={presenting} ref={screen}>
+  return <div className="display-board" data-mode={mode} data-presenting={presenting} ref={screen}>
     {!presenting && <>
       <div className="board-viewer-heading">
         <div><a className="board-home-link" href="#/">← {t('backToProject')}</a><h1>{t('board.viewerTitle')}</h1></div>
@@ -583,7 +587,7 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
         {directions.map(label => <option key={label} value={label}>{directionName(label)}</option>)}
       </select></label>}
       <label>{t('language')}<select value={language} onChange={event => void i18n.changeLanguage(event.target.value)}>
-        {languages.map(([code, label]) => <option key={code} value={code} disabled={!availableLanguages.has(code)}>
+        {languages.filter(([code]) => availableLanguages.has(code)).map(([code, label]) => <option key={code} value={code} disabled={!availableLanguages.has(code)}>
           {label}{availableLanguages.has(code) ? '' : ` · ${t('soon')}`}
         </option>)}
       </select></label>
@@ -606,6 +610,10 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
         </fieldset>
         <div className="board-upcoming">
           <h3>{t('board.moreSettings')}</h3>
+          {language === 'ko' && <div className="board-weather-settings">
+            <label><input type="checkbox" checked={showEnglishStations}
+              onChange={event => setShowEnglishStations(event.target.checked)} />{t('board.showEnglishStations')}</label>
+          </div>}
           {mode !== 'led' && <div className="board-weather-settings">
             <label>{t('board.clockFormat')}<select
               value={effectiveClockFormat}
@@ -685,7 +693,7 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
           const koreanDestination = language === 'ko' && row.destination
             ? koreanBoardStation(row.destination) : undefined;
           const bilingual = koreanDestination && row.destination
-            ? <BilingualBoardStation english={row.destination} korean={koreanDestination} /> : null;
+            ? <BilingualBoardStation english={row.destination} korean={koreanDestination} showEnglish={showEnglishStations} /> : null;
           const forestHills = row.destination === 'Forest Hills-71 Av';
           const borough = row.destination ? destinationBorough(row.destination) : undefined;
           const terminusDetail = forestHills ? name('71 Av') : borough
@@ -716,7 +724,7 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
           {trackStops.map(stop => {
             const korean = language === 'ko' ? koreanBoardStation(stop.name) : undefined;
             return <li key={stop.id}>{korean
-              ? <BilingualBoardStation english={stop.name} korean={korean} />
+              ? <BilingualBoardStation english={stop.name} korean={korean} showEnglish={showEnglishStations} />
               : name(stop.name)}</li>;
           })}
         </ol>
@@ -735,5 +743,5 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
       </div>}
     </section>}
     </div>
-  </main>;
+  </div>;
 }

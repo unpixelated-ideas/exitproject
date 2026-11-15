@@ -1,11 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { archiveDateVisibility } from '../domain/archiveDates';
 import { useTranslation } from 'react-i18next';
 import directory from '../data/archive-directory.json';
 import { archiveColumns, groupArchiveServices, matchesArchiveSearch, sortArchiveRows, type ArchiveRow, type ArchiveSortKey, type SortDirection } from '../domain/archive';
 import { ServiceBullet } from './ServiceBullet';
 
 const rows: ArchiveRow[] = directory.rows;
-const undatedCount = rows.filter(row => !row.votingDate).length;
 // Neighborhood labels supplied by the user, keyed by original MTA station ID.
 const neighborhoods: Record<string, string[]> = {
   '144': ['Fort George'], '145': ['Fort George', 'Hudson Heights'],
@@ -19,6 +19,20 @@ function Services({ services }: { services: string[] }) {
 
 export function ArchiveTable() {
   const { t, i18n } = useTranslation();
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => {
+    const timer = setInterval(() => setNow(new Date()), 60_000);
+    return () => clearInterval(timer);
+  }, []);
+  function votingDate(date: string) {
+    const visibility = archiveDateVisibility(date, now);
+    const hiddenLabel = i18n.language === 'ko' ? '아직 공개되지 않음' : 'Not yet revealed';
+    const blackout = (dayOnly = false) => <span className={`archive-date-blackout${dayOnly ? ' day-only' : ''}`} role="img" aria-label={hiddenLabel} />;
+    if (visibility === 'hidden') return blackout();
+    const value = new Date(`${date}T12:00:00Z`);
+    const parts = new Intl.DateTimeFormat(i18n.language, { month: 'long', day: 'numeric', timeZone: 'UTC' }).formatToParts(value);
+    return <>{parts.map((part, index) => <span key={index}>{visibility === 'month' && part.type === 'day' ? blackout(true) : part.value}</span>)}</>;
+  }
   const [query, setQuery] = useState('');
   const [sortKey, setSortKey] = useState<ArchiveSortKey>('exits');
   const [direction, setDirection] = useState<SortDirection>('ascending');
@@ -47,7 +61,7 @@ export function ArchiveTable() {
         <colgroup><col className="archive-col-name"/><col className="archive-col-count"/><col className="archive-col-count"/><col className="archive-col-services"/><col className="archive-col-night"/><col className="archive-col-members"/><col className="archive-col-ids"/><col className="archive-col-date"/></colgroup>
         <thead><tr>{archiveColumns.map(key => <th key={key} scope="col" aria-sort={sortKey === key ? direction : 'none'}>
           <button type="button" onClick={() => changeSort(key)} aria-label={t('directory.sortAction', { column: t(`directory.columns.${key}`), direction: t(`directory.${key === sortKey && direction === 'ascending' ? 'descending' : 'ascending'}`) })}>
-            <span>{t(`directory.columns.${key}`)}{key === 'votingDate' && <> <strong className="archive-undated-count">{undatedCount}</strong></>}</span><span aria-hidden="true" className="archive-sort-icon">{sortKey === key ? direction === 'ascending' ? '↑' : '↓' : '↕'}</span>
+            <span>{t(`directory.columns.${key}`)}</span><span aria-hidden="true" className="archive-sort-icon">{sortKey === key ? direction === 'ascending' ? '↑' : '↓' : '↕'}</span>
           </button>
         </th>)}</tr></thead>
         <tbody>{visibleRows.length ? visibleRows.map(row => <tr key={row.id}>
@@ -58,13 +72,9 @@ export function ArchiveTable() {
           <td aria-label={row.nightServices.length ? undefined : t('directory.noNightAdditions')}>{row.nightServices.length ? <Services services={row.nightServices}/> : null}</td>
           <td aria-label={row.members.length > 1 ? undefined : t('directory.standalone')}>{row.members.length > 1 ? <ul className="archive-members">{row.members.map(member => <li key={member.stationId}><span>{member.name}</span><small>{member.lines.join(' / ')}</small></li>)}</ul> : null}</td>
           <td className="archive-ids"><span>{t(row.complexIds.length === 1 ? 'directory.complexId' : 'directory.complexIds')} <b>{row.complexIds.join(', ')}</b></span><span>{t(row.stationIds.length === 1 ? 'directory.stationId' : 'directory.stationIds')} <b>{row.stationIds.join(', ')}</b></span></td>
-          <td>{row.votingDate ? new Intl.DateTimeFormat(i18n.language, { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(`${row.votingDate}T12:00:00Z`)) : null}</td>
+          <td>{row.votingDate ? votingDate(row.votingDate) : null}</td>
         </tr>) : <tr><td colSpan={archiveColumns.length} className="archive-empty"><strong>{t('directory.noResults')}</strong><p>{t('directory.trySearch')}</p><button type="button" onClick={() => setQuery('')}>{t('directory.clearSearch')}</button></td></tr>}</tbody>
       </table>
     </div>
-    <details className="archive-method"><summary>{t('directory.methodTitle')}</summary>
-      <p>{t('directory.countDefinition')}</p><p>{t('directory.serviceDefinition')}</p><p>{t('directory.plannedDefinition')}</p><p>{t('directory.sourceDefinition')}</p>
-      <ul>{directory.metadata.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label}</a></li>)}</ul>
-    </details>
   </section>;
 }

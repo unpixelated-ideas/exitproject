@@ -24,7 +24,7 @@
   "start": "Start voting",
   "close": "Close introduction",
   "instructions": "Select an exit. Give it a number.",
-  "instructionBody": "Use each number once. There’s no right answer — choose the order that makes sense to you.",
+  "instructionBody": "Use each number once. There’s no right answer! Choose the order that makes sense to you.",
   "stationPosition": "Station {{current}} of {{total}}",
   "exitProgress": "{{done}} of {{total}} exits numbered",
   "ballotProgress": "{{done}} of {{total}} stations complete",
@@ -69,12 +69,21 @@
   "privacy": "Privacy Policy",
   "terms": "Terms of Use",
   "disclaimer": "The Exit Project is an independent civic project. It is not affiliated with or endorsed by the Metropolitan Transportation Authority.",
+  "arrivalsBoard": "Arrivals Board",
   "footerNote": "A little more clarity at street level.",
   "notFound": "Page not found",
   "backVote": "Return to voting",
   "pages": {
-    "about": "The Exit Project aims to crowdsource proposed numbers for exits throughout the NYC Subway and Staten Island Railway during 2027, then present the proposal to the MTA. Numbers would supplement street descriptions. These are not official MTA designations. Station data, mapping technology, the voting schedule and public infrastructure remain undecided.",
-    "lifelong": "Knowing your own station is a wonderful thing. Knowing every station is a bigger ask. Numbered exits would supplement geographic descriptions: “Exit 2 · NW corner of Broadway & 168th St.” The corner stays; the number adds shorthand for visitors, new arrivals, businesses giving directions and New Yorkers exploring an unfamiliar neighborhood. This example is explanatory, not an official exit designation.",
+    "about": [
+      "The Exit Project is an independent civic initiative with a simple idea: what if every entrance and exit in the New York City Subway and Staten Island Railway had a number? Exit numbers could make unfamiliar stations easier to navigate, help people give clearer directions, and make it easier to identify specific locations in an emergency.",
+      "Throughout 2027, we'll invite New Yorkers and other subway riders to vote on how entrances and exits should be numbered. Each week, a different group of stations will be featured. Participants can examine the entrances and exits at each station and decide which numbers make the most sense to them. At the end of the year, we'll compile the results into a comprehensive, station-by-station numbering proposal.",
+      "Our goal is to present that proposal to the MTA as both a practical starting point and a demonstration of public support for exit numbering. We can't promise the MTA will adopt the results, but we hope to make a constructive case for improving subway wayfinding. The Exit Project is entirely independent of the MTA and other government agencies. It's also completely free and non-commercial."
+    ],
+    "lifelong": [
+      "Maybe you know the subway like the back of your hand. You've been using the same stations for years, and you know exactly which staircase will put you on the right corner. That's great! Exit numbers aren't intended to replace that knowledge or change how you use the subway.",
+      "But New York is a big city, and nobody knows every station equally well. Even lifelong New Yorkers occasionally find themselves somewhere unfamiliar. And, whether we like it or not, visitors and people moving to New York are part of what makes this city what it is. They deserve a subway system that's easy to navigate, too. Making things simpler for someone else doesn't make the subway any less useful to you.",
+      "There's also a practical benefit beyond convenience. In an emergency, being able to identify a particular entrance or exit could make it easier to communicate an exact location and help emergency responders coordinate. Exit numbers won't solve every wayfinding problem, but they're a relatively simple improvement that could make an already complicated system easier for everyone to use."
+    ],
     "feedback": "Feedback collection will be added before public voting. For now, note what felt confusing, what worked well and any accessibility issues you encountered.",
     "privacy": "No account is required. Language, appearance, introduction dismissals and ballot drafts are stored in this browser when local storage is available. Ballots currently remain on your device. No analytics or advertising trackers are included. Clear this site’s browser data to remove saved preferences and drafts.",
     "terms": "The Exit Project is an independent civic project. Proposed numbers do not change official station signage. The public voting terms and methodology will be established before launch.",
@@ -82,32 +91,96 @@
   },
   "questions": [
     {
-      "q": "What is this project?",
-      "a": "An independent effort to propose useful exit numbers alongside existing geographic descriptions."
-    },
-    {
       "q": "How does voting work?",
-      "a": "Assign every number from 1 to the station’s exit count exactly once, complete all stations, then review your ballot."
+      "paragraphs": [
+        "Each week throughout 2027, we'll feature a selection of subway and Staten Island Railway stations. You'll be able to examine the entrances and exits at each station and assign numbers to them. There isn't a prescribed numbering order, so you're free to choose the arrangement that makes the most sense to you."
+      ]
     },
     {
-      "q": "How will the winning arrangement be selected?",
-      "a": "The aggregation method and tie handling are still to be decided."
+      "q": "What happens if I miss a week?",
+      "paragraphs": [
+        "Voting takes place during each station's scheduled voting period. Once that period has ended, you won't be able to submit a vote for those stations. But don't worry! There will be plenty of other stations to vote on throughout the year."
+      ]
     },
     {
-      "q": "Where do the station exits come from?",
-      "a": "The source of station and exit data will be confirmed before public voting begins."
+      "q": "Why are some stations grouped together?",
+      "paragraphs": [
+        "Some subway stations are connected as part of a larger station complex. When you can travel between stations without leaving the fare-controlled area, we treat them as one group for numbering purposes.",
+        "This avoids situations where different parts of the same connected complex have an Exit 1, Exit 2, and so on. Each numbered entrance or exit should be identifiable without ambiguity."
+      ]
     },
     {
-      "q": "When will results be available?",
-      "a": "The plan is to complete the project by the end of 2027. The actual voting periods remain undecided."
+      "q": "What about out-of-station transfers?",
+      "paragraphs": [
+        "Stations connected by an out-of-station transfer are treated separately. Even when that transfer is free, passengers must leave the fare-controlled area to travel between the stations.",
+        "That means each station can have its own numbering system. For example, you might leave one station through Exit 1 and enter the next station through its own Exit 1."
+      ]
     },
     {
-      "q": "Why add numbers?",
-      "a": "A short number can make meeting up and giving directions easier while retaining street and corner descriptions."
+      "q": "Do entrances and exits use the same numbers?",
+      "paragraphs": [
+        "Yes. A numbered access point uses the same identifier whether you're entering or leaving the station."
+      ]
     },
     {
-      "q": "Will the MTA adopt these numbers?",
-      "a": "We plan to present the community proposal to the MTA. Adoption is not guaranteed and this project is not affiliated with the agency."
+      "q": "Why numbers instead of letters?",
+      "paragraphs": [
+        "Numbers are generally more recognizable across different languages than labels based on the English alphabet. That's particularly useful in a city as linguistically diverse as New York.",
+        "There's also a practical consideration. Some station complexes have more than 26 entrances and exits. A letter-based system would eventually need to continue beyond Z, introducing combinations such as AA, AB, and AC. Numbers provide a simpler way to handle large complexes."
+      ]
+    },
+    {
+      "q": "Why do subway exits need numbers?",
+      "paragraphs": [
+        "Exit numbers could reduce confusion at unfamiliar stations, make directions easier to communicate, and help people identify specific entrances and exits during emergencies.",
+        "And you don't have to be new to New York to benefit from them. Even longtime residents encounter stations they don't know particularly well."
+      ],
+      "linkPage": "lifelong",
+      "linkText": "Read more: But I've lived here my whole life…"
+    },
+    {
+      "q": "How will the voting results be used?",
+      "paragraphs": [
+        "After voting concludes at the end of 2027, we'll tally the results and develop a station-by-station exit numbering proposal. We'll use the preferences expressed by voters to inform the recommended numbers.",
+        "The exact method for reconciling conflicting or closely contested assignments is still being developed.",
+        "The final report is intended for presentation to the MTA."
+      ]
+    },
+    {
+      "q": "Will the MTA actually implement these numbers?",
+      "paragraphs": [
+        "We hope the MTA will consider the recommendations, but there's no guarantee that it will.",
+        "The Exit Project has no authority to change station signage or require the MTA to adopt a numbering system. Our aim is to offer a constructive proposal backed by public participation."
+      ]
+    },
+    {
+      "q": "Is the Exit Project affiliated with the MTA?",
+      "paragraphs": [
+        "No. The Exit Project is an independent civic initiative and is not affiliated with, sponsored by, or endorsed by the MTA or any other government agency."
+      ]
+    },
+    {
+      "q": "Does it cost anything to participate?",
+      "paragraphs": [
+        "No. Voting is completely free. The Exit Project is non-commercial, and we're not asking for donations."
+      ]
+    },
+    {
+      "q": "How can I support the Exit Project?",
+      "paragraphs": [
+        "The most useful thing you can do is participate! Vote when new stations become available, share the project with others, and encourage your friends and fellow subway riders to take part.",
+        "If you have suggestions or questions, visit the Feedback page linked in the site's footer."
+      ],
+      "linkPage": "feedback",
+      "linkText": "Feedback"
+    },
+    {
+      "q": "I've lived in New York my whole life. Why would I need exit numbers?",
+      "paragraphs": [
+        "Even if you're familiar with the stations you use most often, there are hundreds of others across the subway system. Exit numbers could make navigating unfamiliar stations easier for everyone."
+      ],
+      "linkPage": "lifelong",
+      "linkText": "Read more: But I've lived here my whole life…"
     }
   ],
   "theme": "Theme",
@@ -164,6 +237,10 @@
     "complexIds": "Complexes:"
   },
   "updateNotes": {
+    "v0_8": [
+      "Added content to the About, FAQ, “But I’ve lived here my whole life…”, Privacy Policy, and Terms of Use pages.",
+      "Fixed header and footer issues when designing custom subway arrival boards."
+    ],
     "v0_7": [
       "Added subway departure boards, allowing users to create, view, and share boards for any NYC subway or Staten Island Railway station.",
       "Updated the site so Microsoft Edge recognizes it as a progressive web app (PWA)."
@@ -217,6 +294,7 @@
     "singleStopHelp": "Choose a service or platform direction with a shared approach of at least two stops, or choose another board style.",
     "closeSettings": "Close",
     "viewerTitle": "Subway Departure Board",
+    "showEnglishStations": "Also show English station names",
     "viewerSettings": "Settings",
     "websiteAppearance": "Website appearance",
     "preview": "Preview",
@@ -299,5 +377,150 @@
     },
     "chooseApproachForStation": "Select a direction above to view departures for {{station}}.",
     "chooseApproachHelp": "Select a direction above to view departures."
+  },
+  "legal": {
+    "updated": "Last updated",
+    "navigation": "Policy navigation",
+    "contents": "On this page",
+    "providers": "Provider policies and terms",
+    "voteNotice": "This demo saves choices in your browser; submission does not send a vote. Read the Privacy Policy.",
+    "privacy": {
+      "description": "How The Exit Project handles ballots, browser storage, and external services.",
+      "sections": [
+        {
+          "id": "purpose",
+          "heading": "About this policy",
+          "paragraphs": [
+            "The Exit Project is an independent, non-commercial community project proposing numbers for New York City subway entrances and exits. “We” means the project maintainers. We do not collect information for advertising. This policy describes the current site, including its demonstration ballot and arrivals board."
+          ]
+        },
+        {
+          "id": "votes",
+          "heading": "Ballots and submission",
+          "paragraphs": [
+            "Your ballot contains station identifiers, entrance/exit identifiers, and the numbers you assign. It is saved as a draft in this browser, separated by voting period. The current Submit ballot action validates your choices and simulates submission; it does not send a ballot to a server or database. A temporary random DEMO reference is generated in memory and is not saved as a voter identifier.",
+            "The project does not currently record vote timestamps, IP addresses, hashed IP addresses, accounts, browser fingerprints, or duplicate-vote identifiers. There is no CAPTCHA or one-person-one-vote enforcement. Provider request logs are separate from ballot storage."
+          ]
+        },
+        {
+          "id": "storage",
+          "heading": "Browser storage and choices",
+          "paragraphs": [
+            "The site uses localStorage under the mta-exit:v2 namespace for ballot drafts, whether you dismissed a period’s introduction, language, light/dark appearance, and background color. The arrivals board also saves station, display mode, service, platform direction, approach display, clock format, direction details, board color theme, weather toggle, and temperature unit. Some board selections can also appear in shareable URL fragments. These settings are not uploaded by the application.",
+            "The application sets no cookies and includes no analytics, advertising trackers, or CAPTCHA integrations. Its ordinary application dependencies and fonts are served with the site. External services still receive network requests as described below. Blocking localStorage prevents settings and drafts from persisting but does not prevent use of the ballot."
+          ]
+        },
+        {
+          "id": "providers",
+          "heading": "Hosting and external requests",
+          "paragraphs": [
+            "GitHub Pages hosts the site. GitHub logs and stores visitors’ IP addresses for security, including for visitors who are not signed in. This is GitHub’s processing, separate from the project’s local ballot drafts.",
+            "Maps load tiles directly from OpenStreetMap Foundation services. Tile requests reveal your IP address, requested map areas, and browser request details, which may include a referrer. They do not contain your assigned exit numbers.",
+            "The arrivals board requests transit feeds directly from MTA servers. When weather is enabled, it requests National Weather Service data using the selected station’s coordinates, not your device location. These providers receive your IP address and request details. The app does not request device geolocation.",
+            "The separate leaflet-test.html map diagnostic page also loads Leaflet files from UNPKG, delivered through Cloudflare, and tiles from OpenStreetMap. Those providers receive connection and request details when that page is opened. The ordinary application bundles Leaflet locally.",
+            "Provider policies govern their own logs, storage, and processing; the project does not control their retention or deletion. Follow the links below for their current policies."
+          ]
+        },
+        {
+          "id": "public",
+          "heading": "Public information and sharing",
+          "paragraphs": [
+            "Station information, proposed schedules, and any built-in example results are public. The current ballot does not publish individual submissions or calculate public totals from your choices. Local drafts are not publicly visible through the site. Anyone with access to your browser profile may be able to read its saved data.",
+            "Opening external services or following links sends requests to those services. Do not put sensitive personal information in public communications or shareable links."
+          ]
+        },
+        {
+          "id": "retention",
+          "heading": "Retention, editing, and deletion",
+          "paragraphs": [
+            "Local drafts and preferences have no automatic expiry in the application. They remain until overwritten, cleared through browser site-data controls, or removed by the browser. You can edit draft numbers; Reset and Start a new ballot replace the current period’s draft with an empty ballot. They do not clear other periods or preferences. Submission does not clear the draft.",
+            "There is currently no server-held ballot to withdraw, change, or delete. To remove all locally saved project information, clear this site’s data in your browser settings; this also removes preferences and may affect other projects hosted on the same origin. Provider-held logs are subject to each provider’s procedures."
+          ]
+        },
+        {
+          "id": "security",
+          "heading": "Security",
+          "paragraphs": [
+            "We use the hosting and browser facilities available to this small project, but no website, connection, or browser storage can be guaranteed secure. Avoid using a shared browser profile for information you want to keep private."
+          ]
+        },
+        {
+          "id": "changes",
+          "heading": "Policy changes",
+          "paragraphs": [
+            "We will update this page and its last-updated date when these practices change. Any future real vote collection or abuse-prevention system needs an updated explanation before use. Reading this policy or browsing the site is not explicit consent to personal-data processing."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "description": "Terms for using The Exit Project, its demonstration ballot, maps, and community proposals.",
+      "sections": [
+        {
+          "id": "purpose",
+          "heading": "Purpose and independence",
+          "paragraphs": [
+            "The Exit Project is an independent, non-commercial community effort to propose NYC subway entrance and exit numbers. It is not affiliated with or endorsed by the MTA or any other transit agency. You may browse, explore maps, and use the ballot for its intended community purpose."
+          ]
+        },
+        {
+          "id": "voting",
+          "heading": "Fair use and voting",
+          "paragraphs": [
+            "Assign each available number once per station and complete the ballot before submitting. You can edit choices before submission. Submission currently runs only as a demonstration and does not record a real vote; repeating it does not add to any public tally.",
+            "Do not use automated voting, manipulate participation or results, circumvent safeguards, overload external services, or interfere with the site or other users. The maintainers may investigate suspected manipulation, exclude manipulated votes from any results, restrict abusive use, and maintain or suspend features. This does not mean that the current demo has a vote-monitoring or identity-verification system."
+          ]
+        },
+        {
+          "id": "results",
+          "heading": "Community proposals, not official designations",
+          "paragraphs": [
+            "Results and proposed numbers are advisory community proposals. They do not establish official MTA entrance or exit designations or require any agency to adopt them. Built-in example results are not a tally of current users’ ballots."
+          ]
+        },
+        {
+          "id": "safety",
+          "heading": "Maps and travel decisions",
+          "paragraphs": [
+            "Maps, entrance inventories, accessibility details, schedules, and arrival estimates may be incomplete, outdated, or incorrect. Do not rely on this site for emergency, accessibility, or real-time operational decisions. Check official agency information, posted signs, and staff instructions for your journey."
+          ]
+        },
+        {
+          "id": "thirdParty",
+          "heading": "Third-party services and rights",
+          "paragraphs": [
+            "GitHub Pages, OpenStreetMap, MTA data services, National Weather Service services, and the separate map diagnostic page’s UNPKG delivery are provided by third parties under their applicable terms and policies. Their availability is outside the project’s control.",
+            "OpenStreetMap contributors retain rights in their data, provided under the Open Database License. Keep required map attribution and comply with applicable tile-use requirements when reusing maps. Existing content licenses, software licenses, trademarks, and other third-party rights remain in place. These terms do not claim ownership of your votes or grant rights in third-party material."
+          ]
+        },
+        {
+          "id": "availability",
+          "heading": "Availability, accuracy, and responsibility",
+          "paragraphs": [
+            "The service is offered as available, without a promise of uninterrupted access, error-free information, preservation of browser drafts, or suitability for a particular purpose. To the extent permitted by applicable law, the maintainers disclaim warranties and liability for loss arising from use of, or inability to use, the site or reliance on its information. Nothing here excludes rights, warranties, or liability that applicable law does not allow to be excluded."
+          ]
+        },
+        {
+          "id": "changes",
+          "heading": "Changes to the service and terms",
+          "paragraphs": [
+            "The maintainers may change, pause, or discontinue features as the project develops. Changes to these terms will appear on this page with an updated date. Review the current terms when using the service. The Privacy Policy explains current information handling separately; these terms do not turn browsing into explicit consent to personal-data processing."
+          ]
+        }
+      ]
+    },
+    "links": [
+      "GitHub Privacy Statement",
+      "OpenStreetMap Foundation Privacy Policy",
+      "MTA Privacy Policy",
+      "National Weather Service Privacy Policy",
+      "UNPKG delivery information",
+      "Cloudflare Privacy Policy",
+      "OpenStreetMap copyright and license",
+      "OpenStreetMap tile usage policy",
+      "OpenStreetMap Foundation Terms of Use",
+      "MTA terms and conditions",
+      "National Weather Service disclaimer"
+    ]
   }
 }

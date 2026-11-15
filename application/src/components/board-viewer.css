@@ -1,3 +1,9 @@
+/* Keep the site shell and language selector available during setup. */
+main.board-page { max-width: none; padding: 0; }
+#root:has(.display-board[data-presenting="true"]) > header,
+#root:has(.display-board[data-presenting="true"]) > footer,
+#root:has(.display-board[data-presenting="true"]) > .skip-link { display: none; }
+
 .display-board {
   --viewer-page: #f5f5f3;
   --viewer-control: #fff;
@@ -8,7 +14,7 @@
   --viewer-hover: #eff0f1;
   --viewer-selected: #434950;
   max-width: none;
-  min-height: 100dvh;
+  min-height: 0;
   margin: 0;
   padding: clamp(0.75rem, 2.4vw, 1.6rem);
   color: var(--viewer-ink);
@@ -206,16 +212,8 @@
 .display-board[data-presenting="true"] .board-preview-toolbar { display: contents; }
 .display-board[data-presenting="true"] .board-panel { margin: 0; }
 .display-board[data-presenting="true"] .board-fullscreen {
-  position: absolute;
-  z-index: 1;
-  inset: 0.5rem 0.5rem auto auto;
-  opacity: 0;
-  color: #fff;
-  background: #24262a;
-  border-color: #41444b;
+  display: none;
 }
-.display-board[data-presenting="true"] .board-fullscreen:hover,
-.display-board[data-presenting="true"] .board-fullscreen:focus-visible { opacity: 1; }
 
 .board-picker-bullets { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 0.18rem; }
 .board-picker-bullets:empty { display: none; }

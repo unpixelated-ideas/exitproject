@@ -19,7 +19,7 @@ export function ExitEditor({ station, assignments, selected, onSelect, onAssign 
                 <button type="button" className="exit-row-trigger" id={`select-${exit.id}`}
                     aria-expanded={active} aria-controls={`picker-${exit.id}`}
                     onClick={() => onSelect(exit.id)}>
-                    <span className={`exit-badge ${number ? 'filled' : ''}`} aria-hidden="true">{number ?? '—'}</span>
+                    <span className={`exit-badge ${number ? 'filled' : ''}`} aria-hidden="true">{number ?? '+'}</span>
                     <span className="exit-row-description">{exit.description[lang]}<span className="exit-row-value">{number ? t('exit', { number }) : t('pick')}</span></span>
                 </button>
                 <div id={`picker-${exit.id}`} className="number-picker" hidden={!active}
