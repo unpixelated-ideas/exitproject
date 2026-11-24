@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import manifest from './manifest.json' with {type:'json'};
+const host='https://mta-exit-voting.cloaks-chimps-6e.workers.dev';
+const health=await (await fetch(host+'/health')).json();
+assert.deepEqual(health,{environment:'production',status:'ready'});
+const periods=await (await fetch(host+'/periods')).json();
+assert.equal(periods.environment,'production');
+assert.equal(periods.periods.length,0,'Run this pre-opening check only while voting is closed');
+assert.ok(Date.parse(periods.serverNow)<Date.parse('2027-01-01T00:00:00Z'),'Never send this probe once voting has opened');
+const period=manifest.periods['2027-01-01'];
+const response=await fetch(host+'/votes',{method:'POST',headers:{'Content-Type':'application/json',Origin:'https://unpixelated-ideas.github.io'},body:JSON.stringify({periodId:period.id,browserId:crypto.randomUUID(),requestId:crypto.randomUUID(),ballot:Object.fromEntries(Object.entries(period.stations).map(([s,exits])=>[s,Object.fromEntries(exits.map((e,i)=>[e,i+1]))]))})});
+assert.equal(response.status,403); assert.equal((await response.json()).error,'period_closed');
+const testHealth=await (await fetch('https://mta-exit-voting-test.cloaks-chimps-6e.workers.dev/health')).json();
+assert.equal(testHealth.environment,'test');
+console.log(JSON.stringify({health,periods,preopeningSubmission:'rejected: period_closed',testHealth},null,2));

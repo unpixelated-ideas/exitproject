@@ -28,6 +28,8 @@ jobs:
       - uses: actions/configure-pages@v5
       - run: pnpm install --frozen-lockfile
         working-directory: application
+      - name: Check voting backend
+        run: node --test voting-api/production/*.test.mjs
       - name: Prepare subway trip patterns
         run: python3 scripts/prepare-board-schedule.py
         working-directory: application

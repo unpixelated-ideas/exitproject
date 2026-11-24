@@ -1,16 +1,13 @@
-/** Reveal dates by New York calendar days, independent of the viewer's timezone. */
+/** Use UTC calendar days, matching voting periods in data/schedule.ts. */
 export function archiveDateVisibility(date: string, now = new Date()): 'full' | 'month' | 'hidden' {
-    const parts = new Intl.DateTimeFormat('en-US', {
-        timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit',
-    }).formatToParts(now);
-    const part = (type: string) => Number(parts.find(item => item.type === type)!.value);
-    const today = new Date(Date.UTC(part('year'), part('month') - 1, part('day')));
+    const today = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
     const target = new Date(`${date}T00:00:00Z`);
     if (target <= today) return 'full';
     if (date.endsWith('-04-01')) return 'hidden';
     const fortnight = new Date(today);
     fortnight.setUTCDate(fortnight.getUTCDate() + 14);
     if (target <= fortnight) return 'full';
+    // Rolling calendar month, clamped to the last day of a shorter month.
     const month = new Date(today);
     month.setUTCDate(1);
     month.setUTCMonth(month.getUTCMonth() + 2, 0);

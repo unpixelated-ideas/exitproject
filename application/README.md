@@ -37,7 +37,15 @@ pnpm test
 
 The dependency lockfile is included. npm can also run the scripts after installing dependencies, but pnpm is the canonical package manager for this checkout. Vite's Node requirements: https://vite.dev/guide/.
 
-## Prototype status
+## Current voting implementation (November 23, 2026)
+
+Real voting uses `src/services/productionVoting.ts` and the separate backend in `../voting-api/production/`. The published GitHub Pages build loads open ballots from the server. Schedule boundaries use UTC, including the independent April special. Before opening, all opening stations appear, but navigation is locked on 135 St (2/3). Local previews stay locked unless explicitly using the test-only mode on port 5173.
+
+Real submissions require localStorage and use a random browser UUID, per-ballot retry IDs, and stored receipts. The backend stores a period-specific hash of the browser UUID and enforces one accepted submission per browser identifier per period. This is a browser-only limit, not identity verification. Test votes remain in the separate test service and database. English and Korean privacy disclosures describe these practices.
+
+See `../voting-api/production/README.md` for verified deployment status and remaining launch steps. The historical sections below describe earlier implementation stages and are superseded by this section for voting behavior.
+
+## Prototype status (historical)
 
 The interface uses neutral voting copy without prototype/test banners. The active stations use supplied real entrance coordinates; the schedule and submission service remain mock implementations. The Archive is a complete, static station directory with separate entrance/elevator counts and scheduled-service data. Browser storage uses the `mta-exit:v2` namespace so the original QA ballot and appearance choices do not seed the experience: the first visit starts in System appearance with every exit unassigned. Subsequent explicit preferences and personal drafts persist normally.
 

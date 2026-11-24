@@ -26,7 +26,7 @@ export function ArchiveTable() {
   }, []);
   function votingDate(date: string) {
     const visibility = archiveDateVisibility(date, now);
-    const hiddenLabel = i18n.language === 'ko' ? '아직 공개되지 않음' : 'Not yet revealed';
+    const hiddenLabel = t('directory.dateNotRevealed');
     const blackout = (dayOnly = false) => <span className={`archive-date-blackout${dayOnly ? ' day-only' : ''}`} role="img" aria-label={hiddenLabel} />;
     if (visibility === 'hidden') return blackout();
     const value = new Date(`${date}T12:00:00Z`);

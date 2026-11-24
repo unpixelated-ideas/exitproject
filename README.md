@@ -6,7 +6,7 @@ An independent civic prototype for proposing NYC subway exit numbers.
 
 The React + TypeScript application is in [`application/`](application/). See its [README](application/README.md) for setup and architecture.
 
-This is a frontend demonstration. Ballots remain in browser storage; submissions are simulated and no real votes are collected. Not affiliated with or endorsed by the Metropolitan Transportation Authority.
+Real voting is implemented for the 2027 schedule, with a separate Cloudflare service and database from testing. Before opening, the ballot remains locked on 135 St (2/3). See voting-api/production/README.md for verified deployment status. Not affiliated with or endorsed by the Metropolitan Transportation Authority.
 
 ## Publishing
 
