@@ -1,6 +1,6 @@
 import { loadBoardArrivals } from '../services/boardArrivals';
 import { loadBoardWeather } from '../services/boardWeather';
-import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getTheme } from '../data/themes';
 import { storage } from '../services/storage';
@@ -320,8 +320,6 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
   const [failed, setFailed] = useState(false);
   const [now, setNow] = useState(Date.now);
   const [presenting, setPresenting] = useState(false);
-  const [previewWidth, setPreviewWidth] = useState<number>();
-  const panel = useRef<HTMLElement>(null);
   const screen = useRef<HTMLDivElement>(null);
   const settings = useRef<HTMLDialogElement>(null);
   const language = i18n.resolvedLanguage === 'ko' ? 'ko' : 'en';
@@ -412,9 +410,6 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
       if (document.fullscreenElement === screen.current) await document.exitFullscreen();
       setPresenting(false);
     } else {
-      const board = panel.current;
-      if (!board) return;
-      setPreviewWidth(board.clientWidth);
       setPresenting(true);
       await screen.current?.requestFullscreen?.().catch(() => {});
     }
@@ -452,24 +447,6 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
   const trackStops = sharedTrack(arrivals.length ? arrivals : exiting);
   const singleStop = mode === 'seoul' && !needsApproach && !!first && trackStops.length < 2;
   const blocked = needsApproach || singleStop;
-  useLayoutEffect(() => {
-    const viewport = screen.current;
-    const board = panel.current;
-    if (!presenting || blocked || !viewport || !board) return;
-
-    function fitBoard() {
-      if (!viewport || !board || !board.offsetWidth || !board.offsetHeight) return;
-      const scale = Math.min(viewport.clientWidth / board.offsetWidth, viewport.clientHeight / board.offsetHeight);
-      board.style.setProperty('--board-fullscreen-scale', String(scale));
-    }
-
-    fitBoard();
-    const observer = new ResizeObserver(fitBoard);
-    observer.observe(viewport);
-    observer.observe(board);
-    return () => observer.disconnect();
-  }, [presenting, blocked]);
-
   const selected = stations.find(item => item.id === station);
   const stationTitle = selected ? name(selected.name) : t('board.title');
   const showDestinationDetail = mode === 'information' || mode === 'color';
@@ -673,8 +650,8 @@ export default function DisplayBoard({ query, appearance, setAppearance }: {
       <p>{singleStop ? t('board.singleStopHelp') : selected ? t('board.chooseApproachForStation', {
         station: stationTitle.replace(/ \([^()]+\)$/, ''),
       }) : t('board.chooseApproachHelp')}</p>
-    </section> : <section className="board-panel" ref={panel}
-      style={presenting ? { width: previewWidth } : undefined} data-color-theme={mode === 'color' && darkBoard ? 'dark' : undefined}
+    </section> : <section className="board-panel"
+      data-color-theme={mode === 'color' && darkBoard ? 'dark' : undefined}
       aria-label={t('board.title')}>
       <div className="board-heading">
         <h1>{showHeaderBullets ? <>

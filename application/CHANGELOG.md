@@ -1,5 +1,10 @@
 # Update Log
 
+## v0.9: November 18, 2026
+
+- Improved full-screen mode for arrival boards for better compatibility with iPadOS and visionOS.
+- Added vote logging and measures to prevent duplicate votes.
+
 ## v0.8: November 14, 2026
 
 - Added content to the About, FAQ, “But I’ve lived here my whole life…”, Privacy Policy, and Terms of Use pages.

@@ -196,24 +196,57 @@ main.board-page { max-width: none; padding: 0; }
   .board-filters select { padding-inline: 0.3rem; font-size: 0.8rem; }
 }
 .display-board[data-presenting="true"] {
+  /* Safari's spatial fullscreen controls can cover the top of the page. */
+  --board-controls-height: max(3rem, 8dvh, env(safe-area-inset-top));
   position: fixed;
   inset: 0;
   z-index: 100;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100dvh;
   min-height: 0;
-  padding: 0;
+  padding: var(--board-controls-height) 0 0;
   overflow: hidden;
   background: #000;
 }
 .display-board[data-presenting="true"] .board-preview,
 .display-board[data-presenting="true"] .board-preview-toolbar { display: contents; }
-.display-board[data-presenting="true"] .board-panel { margin: 0; }
-.display-board[data-presenting="true"] .board-fullscreen {
-  display: none;
+.display-board[data-presenting="true"] .board-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  margin: 0;
+  overflow: auto;
+  aspect-ratio: auto;
+  border: 0;
 }
+.display-board[data-presenting="true"] .board-heading { flex-shrink: 0; }
+.display-board[data-presenting="true"] .board-arrivals {
+  display: grid;
+  grid-auto-rows: 1fr;
+  flex: 1;
+  min-height: auto;
+}
+.display-board[data-presenting="true"] .board-arrivals li { min-height: 0; }
+.display-board[data-presenting="true"][data-mode="information"] .board-arrivals li {
+  font-size: clamp(0.9rem, min(6cqw, 4.2dvh), 3.5rem);
+}
+.display-board[data-presenting="true"][data-mode="seoul"] .board-track-wrap {
+  order: 1;
+  margin-block-start: calc(var(--board-train-width) * 24 / 42 + var(--board-train-bullet-size) + 0.25rem);
+}
+.display-board[data-presenting="true"][data-mode="seoul"] .board-footer { position: static; }
+.display-board[data-presenting="true"] .board-fullscreen {
+  position: absolute;
+  z-index: 1;
+  inset-block-start: 0.25rem;
+  inset-inline-end: 0.5rem;
+}
+.display-board[data-presenting="true"]:fullscreen .board-fullscreen { display: none; }
 
 .board-picker-bullets { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 0.18rem; }
 .board-picker-bullets:empty { display: none; }

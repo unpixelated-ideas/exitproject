@@ -239,15 +239,6 @@
 
 [data-mode="seoul"] .board-footer { position: absolute; inset: auto 0 6cqw; font-size: 0.75rem; }
 
-.display-board[data-presenting="true"] .board-panel {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  max-width: none;
-  border: 0;
-  transform: translate(-50%, -50%) scale(var(--board-fullscreen-scale, 1));
-}
-
 .board-clock-weather { display: inline-flex; align-items: baseline; white-space: nowrap; }
 .board-weather { display: inline-flex; align-items: baseline; gap: 0.25em; padding-inline-end: 0.65em; }
 
