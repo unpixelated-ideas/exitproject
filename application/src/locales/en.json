@@ -38,6 +38,25 @@
   "dateLabel": "Dates",
   "reset": "Reset",
   "how": "How it works",
+  "welcome": {
+    "title": "Help number New York’s subway exits.",
+    "description": "A community-led initiative to create an exit numbering system for the New York City Subway and Staten Island Railway.",
+    "features": {
+      "calendar": {
+        "title": "New stations each Monday in 2027",
+        "description": "Come back each week to vote on a new group of subway and railway stations."
+      },
+      "numbers": {
+        "title": "Give each exit a number",
+        "description": "For each station, choose how its entrances and exits should be numbered."
+      },
+      "train": {
+        "title": "Help shape the proposal",
+        "description": "Once voting concludes, we'll compile the results into a proposal to present to the MTA."
+      }
+    },
+    "disclaimer": "An independent initiative. Not affiliated with the MTA."
+  },
   "introTitle": "Help number New York’s subway exits",
   "introBody": "We’re asking New Yorkers and subway riders to create a proposed exit numbering system together. Throughout 2027, you’ll vote on small groups of stations across the NYC Subway and Staten Island Railway. When voting concludes, we plan to present the results to the MTA.",
   "start": "Start voting",
@@ -257,6 +276,9 @@
     "complexIds": "Complexes:"
   },
   "updateNotes": {
+    "v0_9_1": [
+      "Redesigned the welcome modal for better usability."
+    ],
     "v0_9": [
       "Improved full-screen mode for arrival boards for better compatibility with iPadOS and visionOS.",
       "Added vote logging and measures to prevent duplicate votes."

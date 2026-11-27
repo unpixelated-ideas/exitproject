@@ -1,6 +1,10 @@
 # Update Log
 
-## v0.9: November 18, 2026
+## v0.9.1: November 27, 2026
+
+- Redesigned the welcome modal for better usability.
+
+## v0.9: November 24, 2026
 
 - Improved full-screen mode for arrival boards for better compatibility with iPadOS and visionOS.
 - Added vote logging and measures to prevent duplicate votes.

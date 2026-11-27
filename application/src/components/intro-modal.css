@@ -1,0 +1,215 @@
+.intro-modal {
+    --intro-surface: #fcfdfb;
+    --intro-text: #10271c;
+    --intro-muted: #4c5953;
+    --intro-action: #0d3021;
+    --intro-on-action: #fff;
+    --intro-gutter: max(.75rem, env(safe-area-inset-left), env(safe-area-inset-right));
+    --intro-vertical-gutter: max(.75rem, env(safe-area-inset-top), env(safe-area-inset-bottom));
+    inline-size: min(38rem, calc(100% - 2 * var(--intro-gutter)));
+    max-inline-size: none;
+    max-block-size: calc(100vh - 2 * var(--intro-vertical-gutter));
+    max-block-size: calc(100dvh - 2 * var(--intro-vertical-gutter));
+    margin: auto;
+    padding: clamp(1.125rem, 5vw, 2.625rem);
+    border: 1px solid var(--border);
+    border-radius: clamp(1.125rem, 4vw, 1.625rem);
+    background: var(--intro-surface);
+    color: var(--intro-text);
+    box-shadow: 0 22px 70px rgb(0 0 0 / .28);
+    overscroll-behavior: contain;
+    overflow: auto;
+    overflow-wrap: anywhere;
+    font-family: Arial, Helvetica, system-ui, sans-serif;
+}
+
+:root[data-theme="dark"] .intro-modal {
+    --intro-surface: #17211c;
+    --intro-text: #f4f8f5;
+    --intro-muted: #c5d1c9;
+    --intro-action: #c4ecc9;
+    --intro-on-action: #10271c;
+    --border: #52635a;
+}
+
+.intro-modal::backdrop {
+    background: rgb(13 22 17 / .55);
+    backdrop-filter: blur(4px);
+}
+
+.intro-modal-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin-block-end: 1.625rem;
+}
+
+.intro-modal .brand { line-height: 1.3; }
+.intro-modal .brand-mark { flex: none; }
+
+.intro-modal h1 {
+    margin: 0 0 .625rem;
+    font-size: clamp(1.875rem, 6vw, 2.75rem);
+    line-height: 1.13;
+    letter-spacing: -.035em;
+    outline: none;
+}
+
+.intro-modal h1:lang(ko) { line-height: 1.25; }
+.intro-modal:dir(rtl) :is(h1, .brand) { letter-spacing: normal; }
+
+.intro-modal p {
+    color: var(--intro-muted);
+    line-height: 1.5;
+}
+
+.intro-modal #intro-description { font-size: 1.0625rem; }
+
+.intro-modal-features {
+    display: grid;
+    gap: 1rem;
+    margin-block: 1.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.intro-modal-feature {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(.75rem, 3vw, 1.125rem);
+}
+
+.intro-modal-feature h2 {
+    margin-block-end: .125rem;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: normal;
+}
+
+.intro-modal-feature-icon {
+    display: grid;
+    place-items: center;
+    inline-size: clamp(2.625rem, 10vw, 3.375rem);
+    aspect-ratio: 1;
+    border-radius: .85rem;
+}
+
+.intro-modal-feature--calendar .intro-modal-feature-icon { background: #def1e1; color: #245b3c; }
+.intro-modal-feature--numbers .intro-modal-feature-icon { background: #eee5f8; color: #603b86; }
+.intro-modal-feature--train .intro-modal-feature-icon { background: #e0edfa; color: #25598a; }
+
+:root[data-theme="dark"] .intro-modal-feature--calendar .intro-modal-feature-icon { background: #254534; color: #bceacc; }
+:root[data-theme="dark"] .intro-modal-feature--numbers .intro-modal-feature-icon { background: #3e3152; color: #e2cbf5; }
+:root[data-theme="dark"] .intro-modal-feature--train .intro-modal-feature-icon { background: #253e55; color: #c5e0ff; }
+
+.intro-modal svg {
+    flex: none;
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.intro-modal .intro-modal-start {
+    min-block-size: 3.375rem;
+    gap: .75rem;
+    padding: .625rem 1rem;
+    border: 2px solid transparent;
+    border-radius: .875rem;
+    background: var(--intro-action);
+    color: var(--intro-on-action);
+    font-size: 1.125rem;
+}
+
+.intro-modal .intro-modal-start:hover { border-color: var(--intro-on-action); }
+.intro-modal .intro-modal-start:active { transform: scale(.99); }
+.intro-modal:dir(rtl) .intro-modal-start svg { transform: scaleX(-1); }
+
+.intro-modal .intro-modal-disclaimer {
+    margin-block-start: .875rem;
+    text-align: center;
+    font-size: .8125rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .intro-modal .intro-modal-start:active { transform: none; }
+}
+
+.intro-modal-settings {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    max-inline-size: 100%;
+    margin-inline-start: auto;
+}
+
+.intro-modal .intro-pref-trigger {
+    display: grid;
+    place-items: center;
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    padding: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--intro-muted);
+}
+
+.intro-modal .intro-pref-trigger svg {
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+}
+
+.intro-modal .intro-pref-trigger:hover,
+.intro-modal .intro-pref-trigger:active,
+.intro-modal .intro-pref-trigger[aria-expanded="true"] {
+    background: var(--soft);
+    color: var(--intro-text);
+}
+
+.intro-pref-menu {
+    position: absolute;
+    z-index: 1;
+    inset-block-start: calc(100% + .375rem);
+    inset-inline-end: 0;
+    inline-size: max-content;
+    min-inline-size: 9rem;
+    max-inline-size: min(15rem, calc(100vw - 2 * var(--intro-gutter) - 3rem));
+    max-block-size: min(16rem, max(4rem, calc(100vh - 10rem)));
+    max-block-size: min(16rem, max(4rem, calc(100dvh - 10rem)));
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: .25rem;
+    border: 1px solid var(--border);
+    border-radius: .75rem;
+    background: var(--intro-surface);
+    box-shadow: 0 8px 24px rgb(0 0 0 / .22);
+}
+
+.intro-modal .intro-pref-menu button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .625rem;
+    inline-size: 100%;
+    border: 0;
+    border-radius: .5rem;
+    padding: .375rem .625rem;
+    background: transparent;
+    color: var(--intro-text);
+    text-align: start;
+    font-size: .9375rem;
+}
+
+.intro-modal .intro-pref-menu button:is(:hover, :focus-visible) { background: var(--soft); }
+.intro-modal .intro-pref-menu button:focus-visible { outline-offset: -2px; }
+.intro-modal .intro-pref-menu button svg { inline-size: 1rem; block-size: 1rem; }
+
+.intro-modal .intro-pref-menu button[aria-disabled="true"] { color: var(--intro-muted); cursor: default; }
